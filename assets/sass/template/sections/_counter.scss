@@ -1,0 +1,256 @@
+/* Counter 1 ---------------------------------- */
+.counter-card {
+    --border-color: #D4D4D4;
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        @media (max-width: 1550px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @include md {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @include sm {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -10%;
+            top: 0;
+            width: 120%;
+            height: 100%;
+            background: var(--smoke-color2);
+            z-index: -1;
+            border-radius: 200px;
+
+            @media (max-width: 1600px) {
+                left: -5%;
+                width: 110%;
+            }
+
+            @media (max-width: 1450px) {
+                left: -3%;
+                width: 106%;
+            }
+
+            @media (max-width: 1330px) {
+                left: -2%;
+                width: 104%;
+            }
+
+            @include xl {
+                left: -3%;
+                width: 106%;
+            }
+
+            @include md {
+                left: -5%;
+                width: 110%;
+                border-radius: 0;
+            }
+
+            @include xs {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        .right-shape {
+            @include md {
+                display: none;
+            }
+        }
+
+        .right-shape:last-child {
+            display: none;
+        }
+    }
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .box-number {
+        font-size: 84px;
+        line-height: 1;
+        color: $theme-color;
+        font-weight: 400;
+        margin-bottom: 8px;
+        margin-top: -0.12em;
+
+        @include xl {
+            font-size: 65px;
+        }
+
+        @include lg {
+            font-size: 45px;
+        }
+
+        @include md {
+            font-size: 35px;
+        }
+
+        @include sm {
+            font-size: 30px;
+        }
+
+        @include xs {
+            font-size: 32px;
+        }
+
+        @include vxs {
+            font-size: 30px;
+        }
+
+        .counter-number {
+            color: $title-color;
+            font-size: 84px;
+            font-weight: 900;
+
+            @include xl {
+                font-size: 75px;
+            }
+
+            @include lg {
+                font-size: 60px;
+            }
+
+            @include md {
+                font-size: 45px;
+            }
+
+            @include sm {
+                font-size: 35px;
+            }
+
+            @include xs {
+                font-size: 30px;
+            }
+
+            @include vxs {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .box-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: $body-color;
+        @include md {
+            font-size: 16px;
+        }
+    }
+
+    .media-body {
+        flex: 1;
+    }
+}
+
+
+@include lg {
+    .counter-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+
+        .box-number {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+
+@include sm {
+    .counter-card {
+        &-wrap {
+            flex-wrap: wrap;
+            position: relative;
+
+            @include vxs {
+                flex-direction: column;
+            }
+        }
+
+        flex: 50%;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &:nth-child(1),
+        &:nth-child(3) {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/* Counter  2 ---------------------------------- */
+
+.counter-card-wrap.style2 {
+    &:before {
+        display: none;
+    }
+
+    @include vxs {
+        gap: 30px;
+    }
+
+    .counter-card {
+        @include vxs {
+            margin-bottom: 0px;
+            padding-bottom: 0;
+        }
+    }
+
+    .box-number {
+        font-size: 54px;
+        margin-bottom: 0px;
+        font-weight: 400;
+
+        @include lg {
+            font-size: 48px;
+        }
+
+        @include md {
+            font-size: 42px;
+        }
+
+        @include sm {
+            font-size: 38px;
+        }
+
+        @include xs {
+            font-size: 30px;
+        }
+
+        .counter-number {
+            font-weight: 700;
+            font-size: 64px;
+
+            @include lg {
+                font-size: 58px;
+            }
+
+            @include md {
+                font-size: 50px;
+            }
+
+            @include sm {
+                font-size: 45px;
+            }
+
+            @include xs {
+                font-size: 34px;
+            }
+        }
+    }
+}
