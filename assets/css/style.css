@@ -7513,7 +7513,7 @@ ol.wp-block-rss {
 
 @media (max-width: 400px) {
   .breadcumb-wrapper .breadcrumb-bottom-shape {
-    bottom: -8px;
+    bottom: 8px;
   }
 }
 
@@ -9019,6 +9019,12 @@ ul.comment-list:has(> .th-comment-item ~ .th-comment-item):first-child > .th-pos
   
 }
 
+.th-hero-wrapper.hero-1{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .hero-inner{
   width:100vw;
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
@@ -17616,12 +17622,13 @@ span.select2-selection.select2-selection--single:focus {
 .service-slider-2 .slider-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal {
   top: 98%;
   left: 130px;
-  background-color: var(--th-border-color);
+  background-color: orangered;
   width: 100%;
 }
 
 .service-slider-2 .slider-pagination2 {
   /* Small devices */
+  color: orangered;
 }
 
 @media (max-width: 767px) {
@@ -17632,7 +17639,7 @@ span.select2-selection.select2-selection--single:focus {
 
 .service-slider-2 .slider-pagination2 .current-slide {
   font-size: 54px;
-  color: var(--title-color);
+  color: orangered;
   font-weight: 700;
   margin-right: 5px;
 }
@@ -17640,10 +17647,12 @@ span.select2-selection.select2-selection--single:focus {
 .service-slider-2 .slider-pagination2 .total-slides {
   font-size: 17px;
   position: relative;
+  color: orangered;
 }
 
 .service-slider-2 .slider-pagination2 .total-slides:before {
   content: "/";
+  
 }
 
 .service-2-bg-right {
