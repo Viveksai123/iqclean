@@ -81,38 +81,67 @@
         </div>
         <div class="th-mobile-menu">
             <ul>
-              <ul>
-                                
                 <li><a href="#">About IQ</a></li>
-                <li><a href="#">Interior Cleaning</a></li>
-                <li><a href="service.html">Exeterior Cleaning</a></li>
-                <li><a href="#">Exeterior Lighting</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#">Interior Cleaning</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Move In/Out Cleaning</a></li>
+                        <li><a href="#">Short Term Rental Cleaning</a></li>
+                        <li><a href="#">Special Projects</a></li>
+                        <li><a href="#">Post Construction</a></li>
+                        <li><a href="#">Carpet Cleaning</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">Exterior Cleaning</a>
+                    <ul class="sub-menu">
+                        <li><a href="service.html">Overview</a></li>
+                        <li><a href="HouseWashing.html">House Washing</a></li>
+                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
+                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
+                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
+                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
+                        <li><a href="events.html">Special Projects & Events</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">Exterior Lighting</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">All Season Permanent Lighting</a></li>
+                        <li><a href="#">Landscape Lighting</a></li>
+                        <li><a href="#">Patio Lighting</a></li>
+                        <li><a href="#">Seasonal Holiday Lighting</a></li>
+                        <li><a href="#">Special Projects & Events</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Book Now</a></li>
-              </ul>
+                <li><a href="#">Customer Login</a></li>
+            </ul>
         </div>
     </div>
-</div><!--==============================
-Header Area
-==============================-->
+</div>
 <header class="th-header header-default">
+    <!-- Top Header -->
     <div class="header-top">
         <div class="container">
-            <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
-                <div class="col-auto d-none d-lg-block">
+            <div class="row d-flex flex-row justify-content-between align-items-center gy-2">
+                <div class="col-md-6 col-lg-6 col-xl-auto d-none d-lg-block">
                     <div class="header-links">
-                        <ul>
+                        <ul class="d-flex flex-wrap gap-2">
                             <li><a class="fa-regular fa-phone hover-none"></a> <a href="tel:855.699.8283">855.699.8283</a></li>
                             <li><a class="fa-sharp fa-regular fa-envelope"></a> <a href="mailto:info@kleanix.com">help@iqhome.care</a></li>
                             <li><a class="fal fa-location-dot"></a> <a href="https://www.google.com/maps">1155 F St NW #1055, Washington, DC 20004, United States</a></li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="col-auto">
+                <div class="col-md-6 col-lg-6 col-xl-auto">
                     <div class="header-links">
-                        <ul>
+                        <ul class="d-flex flex-wrap align-items-center gap-3 justify-content-center justify-content-lg-end">
                             <li>
-                                <div class="social-links">
+                                <div class="social-links d-flex align-items-center gap-2">
                                     <span class="social-title">Follow Us:</span>
                                     <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
@@ -125,7 +154,7 @@ Header Area
                                         <img src="assets/img/icon/english.png" alt="icon">
                                         English
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1" style="margin: 0px;">
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink1">
                                         <li>
                                             <a href="#">English</a>
                                             <a href="#">German</a>
@@ -142,33 +171,68 @@ Header Area
             </div>
         </div>
     </div>
+
+    <!-- Sticky Header -->
     <div class="sticky-wrapper">
-        <!-- Main Menu Area -->
-        <div class="menu-area ">
+        <div class="menu-area">
             <div class="container">
-                <div class="row align-items-center justify-content-between">
+                <div class="row d-flex flex-nowrap gap-4 align-items-center justify-content-between">
+                    <!-- Logo -->
                     <div class="col-auto">
                         <div class="header-logo">
                             <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
                         </div>
                     </div>
+                    
+                    <!-- Navigation -->
                     <div class="col-auto">
-                        <nav class="main-menu d-none d-lg-inline-block">
-                            <ul>
-                                
+                        <nav class="main-menu  d-none d-xl-inline-block p-1">
+                            <ul class="d-flex flex-row justify-content-start align-items-center">
                                 <li><a href="#">About IQ</a></li>
-                                <li><a href="#">Interior Cleaning</a></li>
-                                <li><a href="service.html">Exeterior Cleaning</a></li>
-                                <li><a href="#">Exeterior Lighting</a></li>
+                                <li class="menu-item-has-children position-relative">
+                                    <a href="#">Interior Cleaning</a>
+                                    <ul class="sub-menu position-absolute">
+                                        <li><a href="#">Overview</a></li>
+                                        <li><a href="#">Move In/Out Cleaning</a></li>
+                                        <li><a href="#">Short Term Rental Cleaning</a></li>
+                                        <li><a href="#">Special Projects</a></li>
+                                        <li><a href="#">Post Construction</a></li>
+                                        <li><a href="#">Carpet Cleaning</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children position-relative">
+                                    <a href="#">Exterior Cleaning</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="service.html">Overview</a></li>
+                                        <li><a href="HouseWashing.html">House Washing</a></li>
+                                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
+                                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
+                                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
+                                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
+                                        <li><a href="events.html">Special Projects & Events</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children position-relative">
+                                    <a href="#">Exterior Lighting</a>
+                                    <ul class="sub-menu position-absolute">
+                                        <li><a href="#">Overview</a></li>
+                                        <li><a href="#">All Season Permanent Lighting</a></li>
+                                        <li><a href="#">Landscape Lighting</a></li>
+                                        <li><a href="#">Patio Lighting</a></li>
+                                        <li><a href="#">Seasonal Holiday Lighting</a></li>
+                                        <li><a href="#">Special Projects & Events</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#">Book Now</a></li>
-                          
+                                <li><a href="#">Customer Login</a></li>
                             </ul>
                         </nav>
                         <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
                     </div>
-                    <div class="col-auto d-none d-xl-block">
-                        <div class="header-button ">
-                            
+
+                    <!-- Buttons -->
+                    <div class="col-auto d-none d-xl-flex">
+                        <div class="header-button">
                             <a href="#" class="th-btn bg-black star-btn">Get A Quote</a>
                         </div>
                     </div>
@@ -177,6 +241,7 @@ Header Area
         </div>
     </div>
 </header>
+
     <!--==============================
     Breadcumb
 ============================== -->
@@ -246,7 +311,7 @@ Service Area
                             <div class="box-top-left">
                                 
                                 <p class="text-white">Read More</p>
-                                <a href="RoofCleaning.html" class="icon">
+                                <a href="SurfaceWashing.html" class="icon">
                                     <i class="fa-regular white-color fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -256,8 +321,8 @@ Service Area
                             <img src="assets/img/hero/housecleaning.jpg" alt="Service">
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="RoofCleaning.html">Roof Cleaning</a></h3>
-                            <p class="box-text">Safely removes harmful moss growth from roofs to prevent damage and extend roof life</p>
+                            <h3 class="box-title"><a href="SurfaceWashing.html">Surface Washing </a></h3>
+                            <p class="box-text">Cleans exterior surfaces like driveways and patios, removing grime and stains and improve it!</p>
                         </div>
                     </div>
                 </div>
@@ -267,7 +332,7 @@ Service Area
                             <div class="box-top-left">
                                 
                                 <p class="text-white">Read More</p>
-                                <a href="RoofCleaning.html" class="icon">
+                                <a href="events.html" class="icon">
                                     <i class="fa-regular white-color fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -277,8 +342,8 @@ Service Area
                             <img src="assets/img/hero/housecleaning.jpg" alt="Service">
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="RoofCleaning.html">Roof Cleaning</a></h3>
-                            <p class="box-text">Safely removes harmful moss growth from roofs to prevent damage and extend roof life</p>
+                            <h3 class="box-title"><a href="events.html"> Special Project & Events</a></h3>
+                            <p class="box-text">Tailored cleaning services for unique needs and occasions and the Events with special projects.</p>
                         </div>
                     </div>
                 </div>
@@ -288,7 +353,7 @@ Service Area
                             <div class="box-top-left">
                                 
                                 <p class="text-white">Read More</p>
-                                <a href="RoofCleaning.html" class="icon">
+                                <a href="PaperSealing.html" class="icon">
                                     <i class="fa-regular white-color fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -298,8 +363,8 @@ Service Area
                             <img src="assets/img/hero/housecleaning.jpg" alt="Service">
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="RoofCleaning.html">Roof Cleaning</a></h3>
-                            <p class="box-text">Safely removes harmful moss growth from roofs to prevent damage and extend roof life</p>
+                            <h3 class="box-title"><a href="PaperSealing.html">PaperSealing</a></h3>
+                            <p class="box-text">Protect and seal surfaces with durable, weather-resistant paper for long-lasting protection.</p>
                         </div>
                     </div>
                 </div>
@@ -309,7 +374,7 @@ Service Area
                             <div class="box-top-left">
                                 
                                 <p class="text-white">Read More</p>
-                                <a href="RoofCleaning.html" class="icon">
+                                <a href="HouseWashing.html" class="icon">
                                     <i class="fa-regular white-color fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -319,8 +384,8 @@ Service Area
                             <img src="assets/img/hero/housecleaning.jpg" alt="Service">
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="RoofCleaning.html">Roof Cleaning</a></h3>
-                            <p class="box-text">Safely removes harmful moss growth from roofs to prevent damage and extend roof life</p>
+                            <h3 class="box-title"><a href="HouseWashing.html">House Washing</a></h3>
+                            <p class="box-text">Thorough cleaning of exterior surfaces to remove dirt and mist enhancing curb appeal.</p>
                         </div>
                     </div>
                 </div>
@@ -330,7 +395,7 @@ Service Area
                             <div class="box-top-left">
                                 
                                 <p class="text-white">Read More</p>
-                                <a href="RoofCleaning.html" class="icon">
+                                <a href="WindowCleaning.html" class="icon">
                                     <i class="fa-regular white-color fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -340,8 +405,8 @@ Service Area
                             <img src="assets/img/hero/housecleaning.jpg" alt="Service">
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="RoofCleaning.html">Roof Cleaning</a></h3>
-                            <p class="box-text">Safely removes harmful moss growth from roofs to prevent damage and extend roof life</p>
+                            <h3 class="box-title"><a href="WindowCleaning.html">Window Cleaning</a></h3>
+                            <p class="box-text">Efficient cleaning to remove dirt and streaks, leaving windows spotless and clear.</p>
                         </div>
                     </div>
                 </div>

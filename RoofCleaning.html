@@ -81,39 +81,67 @@
         </div>
         <div class="th-mobile-menu">
             <ul>
-              <ul>
-                                
                 <li><a href="#">About IQ</a></li>
-                <li><a href="#">Interior Cleaning</a></li>
-                <li><a href="service.html">Exeterior Cleaning</a></li>
-                <li><a href="#">Exeterior Lighting</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#">Interior Cleaning</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Move In/Out Cleaning</a></li>
+                        <li><a href="#">Short Term Rental Cleaning</a></li>
+                        <li><a href="#">Special Projects</a></li>
+                        <li><a href="#">Post Construction</a></li>
+                        <li><a href="#">Carpet Cleaning</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">Exterior Cleaning</a>
+                    <ul class="sub-menu">
+                        <li><a href="service.html">Overview</a></li>
+                        <li><a href="HouseWashing.html">House Washing</a></li>
+                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
+                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
+                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
+                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
+                        <li><a href="events.html">Special Projects & Events</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">Exterior Lighting</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">All Season Permanent Lighting</a></li>
+                        <li><a href="#">Landscape Lighting</a></li>
+                        <li><a href="#">Patio Lighting</a></li>
+                        <li><a href="#">Seasonal Holiday Lighting</a></li>
+                        <li><a href="#">Special Projects & Events</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Book Now</a></li>
-            
-              </ul>
+                <li><a href="#">Customer Login</a></li>
+            </ul>
         </div>
     </div>
-</div><!--==============================
-Header Area
-==============================-->
+</div>
 <header class="th-header header-default">
+    <!-- Top Header -->
     <div class="header-top">
         <div class="container">
-            <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
-                <div class="col-auto d-none d-lg-block">
+            <div class="row d-flex flex-row justify-content-between align-items-center gy-2">
+                <div class="col-md-6 col-lg-6 col-xl-auto d-none d-lg-block">
                     <div class="header-links">
-                        <ul>
+                        <ul class="d-flex flex-wrap gap-2">
                             <li><a class="fa-regular fa-phone hover-none"></a> <a href="tel:855.699.8283">855.699.8283</a></li>
                             <li><a class="fa-sharp fa-regular fa-envelope"></a> <a href="mailto:info@kleanix.com">help@iqhome.care</a></li>
                             <li><a class="fal fa-location-dot"></a> <a href="https://www.google.com/maps">1155 F St NW #1055, Washington, DC 20004, United States</a></li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="col-auto">
+                <div class="col-md-6 col-lg-6 col-xl-auto">
                     <div class="header-links">
-                        <ul>
+                        <ul class="d-flex flex-wrap align-items-center gap-3 justify-content-center justify-content-lg-end">
                             <li>
-                                <div class="social-links">
+                                <div class="social-links d-flex align-items-center gap-2">
                                     <span class="social-title">Follow Us:</span>
                                     <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
@@ -126,7 +154,7 @@ Header Area
                                         <img src="assets/img/icon/english.png" alt="icon">
                                         English
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1" style="margin: 0px;">
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink1">
                                         <li>
                                             <a href="#">English</a>
                                             <a href="#">German</a>
@@ -143,33 +171,68 @@ Header Area
             </div>
         </div>
     </div>
+
+    <!-- Sticky Header -->
     <div class="sticky-wrapper">
-        <!-- Main Menu Area -->
-        <div class="menu-area ">
+        <div class="menu-area">
             <div class="container">
-                <div class="row align-items-center justify-content-between">
+                <div class="row d-flex flex-nowrap gap-4 align-items-center justify-content-between">
+                    <!-- Logo -->
                     <div class="col-auto">
                         <div class="header-logo">
                             <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
                         </div>
                     </div>
+                    
+                    <!-- Navigation -->
                     <div class="col-auto">
-                        <nav class="main-menu d-none d-lg-inline-block">
-                            <ul>
-                                
+                        <nav class="main-menu  d-none d-xl-inline-block p-1">
+                            <ul class="d-flex flex-row justify-content-start align-items-center">
                                 <li><a href="#">About IQ</a></li>
-                                <li><a href="#">Interior Cleaning</a></li>
-                                <li><a href="service.html">Exeterior Cleaning</a></li>
-                                <li><a href="#">Exeterior Lighting</a></li>
+                                <li class="menu-item-has-children position-relative">
+                                    <a href="#">Interior Cleaning</a>
+                                    <ul class="sub-menu position-absolute">
+                                        <li><a href="#">Overview</a></li>
+                                        <li><a href="#">Move In/Out Cleaning</a></li>
+                                        <li><a href="#">Short Term Rental Cleaning</a></li>
+                                        <li><a href="#">Special Projects</a></li>
+                                        <li><a href="#">Post Construction</a></li>
+                                        <li><a href="#">Carpet Cleaning</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children position-relative">
+                                    <a href="#">Exterior Cleaning</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="service.html">Overview</a></li>
+                                        <li><a href="HouseWashing.html">House Washing</a></li>
+                                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
+                                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
+                                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
+                                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
+                                        <li><a href="events.html">Special Projects & Events</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children position-relative">
+                                    <a href="#">Exterior Lighting</a>
+                                    <ul class="sub-menu position-absolute">
+                                        <li><a href="#">Overview</a></li>
+                                        <li><a href="#">All Season Permanent Lighting</a></li>
+                                        <li><a href="#">Landscape Lighting</a></li>
+                                        <li><a href="#">Patio Lighting</a></li>
+                                        <li><a href="#">Seasonal Holiday Lighting</a></li>
+                                        <li><a href="#">Special Projects & Events</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#">Book Now</a></li>
-                          
+                                <li><a href="#">Customer Login</a></li>
                             </ul>
                         </nav>
                         <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
                     </div>
-                    <div class="col-auto d-none d-xl-block">
-                        <div class="header-button ">
-                            
+
+                    <!-- Buttons -->
+                    <div class="col-auto d-none d-xl-flex">
+                        <div class="header-button">
                             <a href="#" class="th-btn bg-black star-btn">Get A Quote</a>
                         </div>
                     </div>
@@ -178,6 +241,7 @@ Header Area
         </div>
     </div>
 </header>
+
     <!--==============================
     Breadcumb
 ============================== -->
@@ -282,18 +346,18 @@ Header Area
                         <h3 class="widget_title">Categories</h3>
                         <ul>
                             <li><a href="RoofCleaning.html">Roof Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="Window.html">Window Washing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="blog.html">Kitchen Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="blog.html">Bathroom Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="blog.html">Floor Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="blog.html">Window Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="WindowCleaning.html">Window Washing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="SurfaceWashing.html">SurfaceWashing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="HouseWashing.html">House washing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="events.html">projecs </a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="PaperSealing.html">Paper Sealing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
                         </ul>
                     </div>
                     <div class="widget widget_download">
                         <h4 class="widget_title">Download</h4>
                         <div class="download-widget-wrap">
-                            <a href="service-details.html" class="th-btn bg-black"><i class="fa-light fa-file-pdf me-2"></i>DOWNLOAD PDF</a>
-                            <a href="service-details.html" class="th-btn style4"><i class="fa-light fa-file-lines me-2"></i>DOWNLOAD DOC</a>
+                            <a href="service.html" class="th-btn bg-black"><i class="fa-light fa-file-pdf me-2"></i>DOWNLOAD PDF</a>
+                            <a href="service.html" class="th-btn style4"><i class="fa-light fa-file-lines me-2"></i>DOWNLOAD DOC</a>
                         </div>
                     </div>
                     <div class="widget widget_quote">
