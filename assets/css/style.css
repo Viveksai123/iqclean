@@ -1211,7 +1211,6 @@ textarea.is-invalid {
   transition: all ease 0.8s;
   opacity: 0;
   visibility: hidden;
-  display: none;
   
 }
 
@@ -1224,7 +1223,7 @@ textarea.is-invalid {
 }
 
 .th-menu-wrapper .mobile-logo svg {
-  max-width: 185px;
+  max-width: 150px;
 }
 
 .th-menu-wrapper .th-menu-toggle {
@@ -1432,24 +1431,6 @@ textarea.is-invalid {
     padding: 0 20px;
   }
 }
-@media (max-width: 991px) {
-  .th-menu-wrapper {
-      display: block;
-  }
-  .sticky-wrapper {
-      display: none;
-  }
-}
-.sticky-wrapper {
-    display: block;
-}
-
-@media (max-width: 991px) {
-    .sticky-wrapper {
-        display: none;
-    }
-}
-
 
 /*=================================
     03. Utilities
@@ -5280,7 +5261,6 @@ ol.wp-block-rss {
 .sticky-wrapper {
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
-  
 }
 
 .sticky-wrapper.sticky {
