@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/faviconV2.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/faviconV2.png">
@@ -56,405 +57,372 @@
     <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <script>
+        
+    </script>
+    <style>
+      
+    </style>
 
 </head>
 
 <body>
-
-    <!--[if lte IE 9]>
-    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  	<![endif]-->
-
-
-    <!--********************************
-   		Code Start From Here 
-	******************************** -->
-
+   
     <!--==============================
-     Preloader
-  ==============================-->
-  <div class="th-menu-wrapper">
-    <div class="th-menu-area text-center">
-        <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-        <div class="mobile-logo">
-            <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
+      Mobile Menu
+    ============================== -->
+
+    <div class="th-menu-wrapper block xl:hidden">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle text-black"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul class="space-y-1">
+                    <li><a href="" class="block py-3 text-black hover:bg-gray-50">About IQ</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Interior Cleaning</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Move In/Out Cleaning</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Short Term Rental Cleaning</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Post Construction</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Carpet Cleaning</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Exterior Cleaning</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="service.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="HouseWashing.html" class="block px-4 py-2 text-black hover:bg-gray-50">House Washing</a></li>
+                            <li><a href="WindowCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Window Cleaning</a></li>
+                            <li><a href="SurfaceWashing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Surface Washing</a></li>
+                            <li><a href="RoofCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Roof Cleaning</a></li>
+                            <li><a href="PaperSealing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Paper Sealing</a></li>
+                            <li><a href="events.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects & Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Exterior Lighting</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">All Season Permanent Lighting</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Landscape Lighting</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Patio Lighting</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Seasonal Holiday Lighting</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects & Events</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block py-3 text-black hover:bg-gray-50">Book Now</a></li>
+                    <li><a href="#" class="block py-3 text-black hover:bg-gray-50">Customer Login</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="th-mobile-menu">
-            <ul>
-                <li><a href="#">About IQ</a></li>
-                <li class="menu-item-has-children">
-                    <a href="#">Interior Cleaning</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Move In/Out Cleaning</a></li>
-                        <li><a href="#">Short Term Rental Cleaning</a></li>
-                        <li><a href="#">Special Projects</a></li>
-                        <li><a href="#">Post Construction</a></li>
-                        <li><a href="#">Carpet Cleaning</a></li>
+    </div>  
+    <header class="th-header fixed-top w-100">
+        <div class="sticky-wrapper">
+            <div class="menu-area w-100">
+                <div class="container">
+                    <div class="row d-flex flex-nowrap align-items-center justify-content-center" >
+                        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%;" class="gap-4">
+                        <div class="col-auto ">
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img src="assets/img/hero/logo2.png" alt="Iqcleaning_logo" class="logo-initial">
+                                    <img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo" class="logo-scrolled">
+                                </a>
+                            </div>
+                        </div>
                         
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Exterior Cleaning</a>
-                    <ul class="sub-menu">
-                        <li><a href="service.html">Overview</a></li>
-                        <li><a href="HouseWashing.html">House Washing</a></li>
-                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
-                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
-                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
-                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
-                        <li><a href="events.html">Special Projects & Events</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Exterior Lighting</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">All Season Permanent Lighting</a></li>
-                        <li><a href="#">Landscape Lighting</a></li>
-                        <li><a href="#">Patio Lighting</a></li>
-                        <li><a href="#">Seasonal Holiday Lighting</a></li>
-                        <li><a href="#">Special Projects & Events</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Book Now</a></li>
-                <li><a href="#">Customer Login</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<header class="th-header header-default">
-    <!-- Top Header -->
-    <div class="header-top">
-        <div class="container">
-            <div class="row d-flex flex-row justify-content-between align-items-center gy-2">
-                <div class="col-md-6 col-lg-6 col-xl-auto d-none d-lg-block">
-                    <div class="header-links">
-                        <ul class="d-flex flex-wrap gap-2">
-                            <li><a class="fa-regular fa-phone hover-none"></a> <a href="tel:855.699.8283">855.699.8283</a></li>
-                            <li><a class="fa-sharp fa-regular fa-envelope"></a> <a href="mailto:info@kleanix.com">help@iqhome.care</a></li>
-                            <li><a class="fal fa-location-dot"></a> <a href="https://www.google.com/maps">1155 F St NW #1055, Washington, DC 20004, United States</a></li>
-                        </ul>
+                        <div class="col-auto">
+                            <nav class="main-menu d-none d-xl-inline-block">
+                                <ul class="d-flex">
+                                    <li><a href="aboutus.html" class="nav-link">About IQ</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Interior Cleaning</a>
+                                        <ul class="sub-menu position-absolute">
+                                            <li><a href="interiorcleaning.html">Overview</a></li>
+                                            <li><a href="MoveInOutCleaning.html">Move In/Out Cleaning</a></li>
+                                            <li><a href="ShortTermRentalCleaning.html">Short Term Rental Cleaning</a></li>
+                                            <li><a href="SpecialProjects.html">Special Projects</a></li>
+                                            <li><a href="PostConstruction.html">Post Construction</a></li>
+                                            <li><a href="CarpetCleaning.html">Carpet Cleaning</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Exterior Cleaning</a>
+                                        <ul class="sub-menu position-absolute">
+                                            <li><a href="service.html">Overview</a></li>
+                                            <li><a href="HouseWashing.html">House Washing</a></li>
+                                            <li><a href="WindowCleaning.html">Window Cleaning</a></li>
+                                            <li><a href="SurfaceWashing.html">Surface Washing</a></li>
+                                            <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
+                                            <li><a href="PaperSealing.html">Paper Sealing</a></li>
+                                            <li><a href="events.html">Special Projects & Events</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Exterior Lighting</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="Exteriorlighting.html">Overview</a></li>
+                                            <li><a href="SeasonPermanent.html">All Season Permanent Lighting</a></li>
+                                            <li><a href="LandscapeLighting.html">Landscape Lighting</a></li>
+                                            <li><a href="PatioLighting.html">Patio Lighting</a></li>
+                                            <li><a href="SeasonalHoliday.html">Seasonal Holiday Lighting</a></li>
+                                            <li><a href="SpecialProjectslighting.html">Special Projects & Events</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a href="#" class="nav-link">Customer Login</a></li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i></button>
+                        </div>
+
+                        <div class="col-auto d-none d-xl-flex">
+                            <div class="header-button">
+                                <li href="#" class="th-btn bg-black">Book Now</li>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-auto">
-                    <div class="header-links">
-                        <ul class="d-flex flex-wrap align-items-center gap-3 justify-content-center justify-content-lg-end">
-                            <li>
-                                <div class="social-links d-flex align-items-center gap-2">
-                                    <span class="social-title">Follow Us:</span>
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </li>
-                            <li class="d-none d-md-inline-block">
-                                <div class="dropdown-link">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="assets/img/icon/english.png" alt="icon">
-                                        English
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink1">
-                                        <li>
-                                            <a href="#">English</a>
-                                            <a href="#">German</a>
-                                            <a href="#">French</a>
-                                            <a href="#">Italian</a>
-                                            <a href="#">Latvian</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Sticky Header -->
-    <div class="sticky-wrapper">
-        <div class="menu-area">
-            <div class="container">
-                <div class="row d-flex flex-nowrap gap-4 align-items-center justify-content-between">
-                    <!-- Logo -->
-                    <div class="col-auto">
-                        <div class="header-logo">
-                            <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation -->
-                    <div class="col-auto">
-                        <nav class="main-menu  d-none d-xl-inline-block p-1">
-                            <ul class="d-flex flex-row justify-content-start align-items-center">
-                                <li><a href="#">About IQ</a></li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Interior Cleaning</a>
-                                    <ul class="sub-menu position-absolute">
-                                        <li><a href="#">Overview</a></li>
-                                        <li><a href="#">Move In/Out Cleaning</a></li>
-                                        <li><a href="#">Short Term Rental Cleaning</a></li>
-                                        <li><a href="#">Special Projects</a></li>
-                                        <li><a href="#">Post Construction</a></li>
-                                        <li><a href="#">Carpet Cleaning</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Exterior Cleaning</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="service.html">Overview</a></li>
-                                        <li><a href="HouseWashing.html">House Washing</a></li>
-                                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
-                                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
-                                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
-                                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
-                                        <li><a href="events.html">Special Projects & Events</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Exterior Lighting</a>
-                                    <ul class="sub-menu position-absolute">
-                                        <li><a href="#">Overview</a></li>
-                                        <li><a href="#">All Season Permanent Lighting</a></li>
-                                        <li><a href="#">Landscape Lighting</a></li>
-                                        <li><a href="#">Patio Lighting</a></li>
-                                        <li><a href="#">Seasonal Holiday Lighting</a></li>
-                                        <li><a href="#">Special Projects & Events</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Book Now</a></li>
-                                <li><a href="#">Customer Login</a></li>
-                            </ul>
-                        </nav>
-                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="col-auto d-none d-xl-flex">
-                        <div class="header-button">
-                            <a href="#" class="th-btn bg-black star-btn">Get A Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
+    </header>
+    
     <!--==============================
     Breadcumb
 ============================== -->
     <!-- data-overlay="title" data-opacity="1" -->
-
-    <div class="th-hero-wrapper hero-1 " id="hero" data-bg-src="assets/img/hero/hero.jpg">
+    <div class="th-hero-wrapper hero-1" id="hero" data-bg-src="assets/img/hero/hero.jpg">
         <div class="hero-inner">
 
             <div class="container">
                 <div class="hero-style1">
-                    <span class="sub-title text-white">
-                        We Clean, You Shine
-                    </span>
+                  
                     <h1 class="hero-title white-color ">
-                        Exterior Cleaning
+                        About Us
                     </h1>
                     <ul class="breadcumb-menu">
                         <li><a href="index.html">Home</a></li>
-                        <a class="white-color">Exterior Cleaning</a>
+                        <li><a class="white-color">About Us</a></li>
+                        
                     </ul>
 
                 </div>
             </div>
            
         </div>
-    </div>
-    
-
-    <div class="bg-black text-white min-vh-100 d-flex align-items-center justify-content-center">
-        <section class="container-fluid min-vh-100 d-flex flex-column flex-md-row align-items-center justify-content-between px-5 py-5">
-            <!-- Left Section: Description -->
-            <div class="col-md-6 text-center text-md-start p-4">
-                <h2 class="display-4 fw-bold text-white shadow-lg mb-4">Why Choosing Exterior Cleaning</h2>
-                <p class="fs-5 text-light mb-4">Discover unparalleled exterior cleaning services designed to enhance the curb appeal and longevity of your property. Our eco-friendly methods ensure your outdoor spaces are spotless and well-maintained.</p>
-                <ul class="list-unstyled">
-                    <li class="d-flex align-items-center gap-3 fs-5 mb-3">
-                        <svg width="24" height="24" fill="orangered" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.2l-4.2-4.2-1.4 1.4 5.6 5.6 12-12-1.4-1.4z"/></svg>
-                        Comprehensive exterior cleaning solutions
-                    </li>
-                    <li class="d-flex align-items-center gap-3 fs-5 mb-3">
-                        <svg width="24" height="24" fill="orangered" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
-                        Eco-friendly and non-toxic cleaning agents
-                    </li>
-                    <li class="d-flex align-items-center gap-3 fs-5 mb-3">
-                        <svg width="24" height="24" fill="orangered" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 2c-4.4 0-8 3.6-8 8h2c0-3.3 2.7-6 6-6s6 2.7 6 6h2c0-4.4-3.6-8-8-8z"/></svg>
-                        Highly skilled and professional team
-                    </li>
-                </ul>
-                <button class="btn btn-light fw-bold px-4 py-3 rounded-pill shadow-lg mt-3">Get a Free Quote</button>
-            </div>
-            
-            <!-- Right Section: Image -->
-            <div class="col-md-6 d-flex justify-content-center align-items-center mt-5 mt-md-0 p-4">
-                <div class="position-relative w-100 d-flex justify-content-center">
-                    <img src="assets/img/hero/background.jpeg" alt="Premium Cleaning" class="img-fluid rounded-3 shadow-lg border border-white" style="max-width: 80%; filter: drop-shadow(5px 5px 10px rgba(255, 69, 0, 0.7));">
-                    <!-- <div class="position-absolute top-0 start-0 w-100 h-100 bg-white opacity-25 rounded-3" style="filter: blur(10px);"></div> -->
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    
-    
-    <!--==============================
-Service Area  
+    </div><!--==============================
+About Area  
 ==============================-->
-    <section class="th-service-1 overflow-hidden space" id="service-sec">
+    <div class="overflow-hidden space" id="about-sec">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8">
-                    <div class="title-area text-center">
-                        <span class="sub-title justify-content-center">Exeterior Cleaning</span>
-                        <h2 class="sec-title">The Services We Provide For <span class="text-theme">Our Customer</span></h2>
+            <div class="row gy-30 align-items-center">
+                <div class="col-xl-7 mb-xl-0">
+                    <div class="img-box1">
+                       
+                        <div class="img2" >
+                            
+                          <div class="w-full h-[100vh]" data-bg-src="assets/img/hero/hero.jpg" >
+                            <div class="about-play-btn-wrap "  >
+                                <a href="https://www.youtube.com/watch?v=e6h_PCgv7So" class="play-btn style2 popup-video">
+                                    <i class="fa-sharp fa-solid fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="year-counter">
+                            <div class="rotate-text">
+                                <h5 class="year-counter_text-small">Years Of</h5>
+                                <h4 class="year-counter_text-big">Experience</h4>
+                            </div>
+                            <div class="year-counter_number"><span class="counter-number">10</span></div>
+                        </div>
                     </div>
+                </div>
+                <div class="col-xl-5">
+                    <div class="title-area">
+                        <span class="sub-title before-none">About IQ Cleaning</span>
+                        <h2 class="sec-title">Your Trusted Cleaning Experts</h2>
+                        <p class="sec-text">
+                            At IQ Cleaning, we provide top-tier cleaning services for homes and businesses. 
+                            From routine maintenance to deep cleaning and specialized sanitation, our expert team ensures spotless results. 
+                            We use eco-friendly products and customized cleaning plans to meet your unique needs.
+                        </p>
+                    </div>
+                    <div class="checklist style2 mb-35">
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> One-time, weekly, or bi-weekly cleaning services</li>
+                            <li><i class="fa-solid fa-circle"></i> Vetted & background-checked professionals</li>
+                            <li><i class="fa-solid fa-circle"></i> Safe, eco-friendly cleaning products</li>
+                            <li><i class="fa-solid fa-circle"></i> Easy online booking & payment</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#" class="th-btn star-btn bg-black">Book Now</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--==============================
+Counter Area  
+==============================-->
+    <div class="counter-sec1 space-bottom">
+        <div class="container">
+            <div class="counter-card-wrap space">
+                <div class="counter-card">
+                    <div class="media-body">
+                        <h2 class="box-number"><span class="counter-number">16</span>+</h2>
+                        <p class="box-text">Satisfied Our Customers</p>
+                    </div>
+                </div>
+                
+                <div class="counter-card">
+                    <div class="media-body">
+                        <h2 class="box-number"><span class="counter-number">180</span>+</h2>
+                        <p class="box-text">Cleaning Expert Members</p>
+                    </div>
+                </div>
+           
+                <div class="counter-card">
+                    <div class="media-body">
+                        <h2 class="box-number"><span class="counter-number">120</span>+</h2>
+                        <p class="box-text">Company Award Winner</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div><!--==============================
+Process Area  
+==============================-->
+<section class="space bg-black" id="process-sec" data-bg-src="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center text-xl-start">
+                <div class="title-area">
+                    <span class="sub-title before-none style-theme2 lg-after-none justify-content-center justify-content-xl-start">
+                        Our Work Process
+                    </span>
+                    <h2 class="sec-title text-white">How IQ Cleaning Works!</h2>
                 </div>
             </div>
-            <div class="row gy-30 justify-content-center">
-                <div class="col-xl-4 col-md-6">
-                    <div class="service-card">
-                        <div class="box-top-wrap">
-                            <div class="box-top-left">
-                                
-                                <p class="text-white">Read More</p>
-                                <a href="RoofCleaning.html" class="icon">
-                                    <i class="fa-regular white-color fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="box-img">
-                            <img src="assets/img/hero/housecleaning.jpg" alt="Service">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="RoofCleaning.html">Roof Cleaning</a></h3>
-                            <p class="box-text">Safely removes harmful moss growth from roofs to prevent damage and extend roof life</p>
+        </div>
+        <div class="row gy-4 justify-content-center">
+            <div class="col-xl-3 col-md-6 process-box-wrap">
+                <div class="process-box style-3">
+                    <div class="box-icon">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <h3 class="box-title text-white">Request a Quote</h3>
+                    <p class="box-text text-white">Fill out our simple form or call us to get a customized cleaning plan and quote tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 process-box-wrap">
+                <div class="process-box style-3">
+                    <div class="box-icon">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    <h3 class="box-title text-white">Schedule Your Cleaning</h3>
+                    <p class="box-text text-white">Choose a convenient date and time for our professional team to arrive and handle your cleaning needs.</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 process-box-wrap">
+                <div class="process-box style-3">
+                    <div class="box-icon">
+                        <i class="fa-sharp fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="box-title text-white">Confirm & Relax</h3>
+                    <p class="box-text text-white">Once your booking is confirmed, sit back and relax while our experts take care of everything.</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 process-box-wrap">
+                <div class="process-box style-3">
+                    <div class="box-icon">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3 class="box-title text-white">Enjoy a Spotless Space</h3>
+                    <p class="box-text text-white">Our team ensures a thorough and professional clean, leaving your home or office spotless and fresh.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--==============================
+
+  <!--==============================
+Why choose Area  
+==============================-->
+    <div class="overflow-hidden space" id="why-sec" data-bg-src="assets/img/bg/why-3-bg.jpg">
+      
+
+        <div class="container">
+            <div class="row gy-50 align-items-center">
+                <div class="col-xl-6">
+                    <div class="why-2-left">
+                       
+                        <div class="smoke-bg"></div>
+                        <div class="theme-bg"></div>
+                        <div class="theme2-bg"></div>
+                        <div class="img2">
+                            <img src="assets/img/hero/hero.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="service-card">
-                        <div class="box-top-wrap">
-                            <div class="box-top-left">
-                                
-                                <p class="text-white">Read More</p>
-                                <a href="SurfaceWashing.html" class="icon">
-                                    <i class="fa-regular white-color fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="box-img">
-                            <img src="assets/img/hero/housecleaning.jpg" alt="Service">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="SurfaceWashing.html">Surface Washing </a></h3>
-                            <p class="box-text">Cleans exterior surfaces like driveways and patios, removing grime and stains and improve it!</p>
-                        </div>
-                    </div>
+              <div class="col-xl-6">
+    <div class="why-2-right">
+        <div class="title-area">
+            <span class="sub-title after-none">Why Choose IQ Cleaning</span>
+            <h2 class="sec-title">Elevating Cleanliness, One Home at a Time</h2>
+            <p class="sec-text">At IQ Cleaning, we provide top-tier home and commercial cleaning services tailored to your needs. Our expert team ensures a spotless and sanitized space, offering flexible plans that fit your lifestyle. With our commitment to excellence, we deliver results you can trust.</p>
+        </div>
+    </div>
+    <div class="why-2-right-bottom-wrapper">
+        <div class="shape-mockup why-2-right-bg-triangle" data-mask-src="assets/img/bg/why-2-right-bg-triangle.png"></div>
+        <div class="why-2-right-bottom">
+            <div class="why-2-right-bottom__box">
+                <div class="why-2-right-bottom__box-icon">
+                    <img src="assets/img/icon/why-2-right-1.svg" alt="">
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="service-card">
-                        <div class="box-top-wrap">
-                            <div class="box-top-left">
-                                
-                                <p class="text-white">Read More</p>
-                                <a href="events.html" class="icon">
-                                    <i class="fa-regular white-color fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="box-img">
-                            <img src="assets/img/hero/housecleaning.jpg" alt="Service">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="events.html"> Special Project & Events</a></h3>
-                            <p class="box-text">Tailored cleaning services for unique needs and occasions and the Events with special projects.</p>
-                        </div>
-                    </div>
+                <div class="why-2-right-bottom__box-content">
+                    <h3 class="box-title">Customized Cleaning Plans</h3>
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="service-card">
-                        <div class="box-top-wrap">
-                            <div class="box-top-left">
-                                
-                                <p class="text-white">Read More</p>
-                                <a href="PaperSealing.html" class="icon">
-                                    <i class="fa-regular white-color fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="box-img">
-                            <img src="assets/img/hero/housecleaning.jpg" alt="Service">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="PaperSealing.html">PaperSealing</a></h3>
-                            <p class="box-text">Protect and seal surfaces with durable, weather-resistant paper for long-lasting protection.</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="why-2-right-bottom__box">
+                <div class="why-2-right-bottom__box-icon">
+                    <img src="assets/img/icon/why-2-right-2.svg" alt="">
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="service-card">
-                        <div class="box-top-wrap">
-                            <div class="box-top-left">
-                                
-                                <p class="text-white">Read More</p>
-                                <a href="HouseWashing.html" class="icon">
-                                    <i class="fa-regular white-color fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="box-img">
-                            <img src="assets/img/hero/housecleaning.jpg" alt="Service">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="HouseWashing.html">House Washing</a></h3>
-                            <p class="box-text">Thorough cleaning of exterior surfaces to remove dirt and mist enhancing curb appeal.</p>
-                        </div>
-                    </div>
+                <div class="why-2-right-bottom__box-content">
+                    <h3 class="box-title">Experienced & Trusted Professionals</h3>
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="service-card">
-                        <div class="box-top-wrap">
-                            <div class="box-top-left">
-                                
-                                <p class="text-white">Read More</p>
-                                <a href="WindowCleaning.html" class="icon">
-                                    <i class="fa-regular white-color fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="box-img">
-                            <img src="assets/img/hero/housecleaning.jpg" alt="Service">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="WindowCleaning.html">Window Cleaning</a></h3>
-                            <p class="box-text">Efficient cleaning to remove dirt and streaks, leaving windows spotless and clear.</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="why-2-right-bottom__box">
+                <div class="why-2-right-bottom__box-icon">
+                    <img src="assets/img/icon/why-2-right-3.svg" alt="">
                 </div>
+                <div class="why-2-right-bottom__box-content">
+                    <h3 class="box-title">Eco-Friendly & Safe Products</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
             </div>
         </div>
-    </section>
-
-    <!--==============================
-
+    </div><!--==============================
 Testimonial Area  
 ==============================-->
-    <section class="testi-card-area-2 overflow-hidden space-bottom" id="testi-sec">
+    <section class="testi-card-area-2 overflow-hidden space" id="testi-sec">
         <div class="shape-mockup testimonials-bg-3" data-right="0">
             <img src="assets/img/shape/testimonials-bg-3.png" alt="Image">
         </div>

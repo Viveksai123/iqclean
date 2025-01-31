@@ -729,6 +729,7 @@ textarea.style2 {
 
 .form-rounded-10 .th-btn {
   border-radius: 10px;
+  text-decoration: none;
 }
 
 option:checked, option:focus, option:hover {
@@ -1296,7 +1297,12 @@ textarea.is-invalid {
 .th-mobile-menu ul li li:first-child {
   border-top: 1px solid #fdedf1;
 }
-
+.th-mobile-menu ul li.menu-item-has-children > a,
+.th-mobile-menu ul li .sub-menu,
+.th-mobile-menu ul li .sub-menu li,
+.th-mobile-menu ul li .sub-menu li a{
+  color: #000000 !important;
+}
 .th-mobile-menu ul li a {
   display: block;
   position: relative;
@@ -1699,6 +1705,7 @@ textarea.is-invalid {
   z-index: -1;
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
+  text-decoration: none;
 }
 
 .th-btn.style4:hover {
@@ -1737,19 +1744,23 @@ textarea.is-invalid {
 
 .th-btn.btn-fw {
   width: 100%;
+  text-decoration: none;
 }
 
 .th-btn.btn-fw:before, .th-btn.btn-fw:after {
   display: none;
+  text-decoration: none;
 }
 
 .th-btn.btn-fw:hover {
   background-color: var(--title-color);
+  text-decoration: none;
 }
 
 .th-btn.btn-sm {
   padding: 16px 25px;
   min-width: 152px;
+  text-decoration: none;
 }
 
 .icon-btn {
@@ -5261,6 +5272,7 @@ ol.wp-block-rss {
 .sticky-wrapper {
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
+  background-color:transperent;
 }
 
 .sticky-wrapper.sticky {
@@ -5354,7 +5366,6 @@ ol.wp-block-rss {
 
 .main-menu ul li.menu-item-has-children > a:hover:after {
   content: "\f077";
-  color: var(--theme-color);
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -5646,18 +5657,25 @@ ol.wp-block-rss {
   --body-color: #fff;
 }
 
+
+
 .header-top a:hover {
   color: orange;
 }
 
 /* Header Default ---------------------------------- */
 .header-default {
-  background: var(--white-color);
+  background: transparent;
+  color: white;
   border-radius: 0 0 55px 55px;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
+}
+
+.header-default .text{
+  color:orangered;
 }
 
 .header-default .header-top {
@@ -5704,6 +5722,7 @@ ol.wp-block-rss {
   background: transparent;
 }
 
+ 
 .header-layout1 .menu-area::before {
   content: "";
   position: absolute;
@@ -5869,6 +5888,9 @@ ol.wp-block-rss {
           transform: translateX(-50%);
   /* Medium devices */
 }
+
+
+
 
 @media (max-width: 991px) {
   .header-layout2 .menu-area::before {
@@ -16752,6 +16774,7 @@ span.select2-selection.select2-selection--single:focus {
   color: var(--body-color);
   border: 1px solid var(--th-border-color);
   min-width: auto;
+  
   /* Medium devices */
 }
 
@@ -16762,6 +16785,7 @@ span.select2-selection.select2-selection--single:focus {
 .filter-menu .th-btn:hover, .filter-menu .th-btn.active {
   border-color: var(--theme-color);
   color: var(--white-color);
+  
 }
 
 .filter-menu .th-btn:hover:before, .filter-menu .th-btn.active:before {
@@ -21650,5 +21674,87 @@ span.select2-selection.select2-selection--single:focus {
     padding-bottom: 70px;
   }
 }
+ /* Default state */
+ .th-header {
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  background: transparent;
+  padding: 10px 0;
+}
+.th-header a {
+  color: white !important;
+}
+.th-header img.logo-scrolled {
+  display: none;
+}
+.th-header img.logo-initial {
+  display: block;
+}
+.menu-item-has-children > a {
+  color: white !important;
+  text-decoration: none;
+}
+.menu-item-has-children > a::after {
+  content: "";
+  color: white !important;
+  text-decoration: none;
+}
 
-/*# sourceMappingURL=style.css.map */
+/* On Scroll */
+.th-header.scrolled {
+  background: white !important;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.th-header.scrolled a {
+  color: black !important;
+  text-decoration: none;
+}
+
+.th-header.scrolled .sub-menu a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.th-header.scrolled .logo-initial {
+  display: none !important;
+}
+
+.th-header .logo-scrolled {
+  display: none;
+}
+
+.th-header.scrolled .logo-scrolled {
+  display: block !important;
+  text-decoration: none;
+}
+
+.th-header.scrolled .menu-item-has-children > a {
+  color: black !important;
+  text-decoration: none;
+}
+
+.th-header.scrolled .menu-item-has-children > a::after {
+  content: " \f054";
+  color: black !important;
+  text-decoration: none;
+}
+
+
+.sub-menu {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  text-decoration: none;
+}
+
+.sub-menu a {
+  color: white !important;
+  padding: 5px 10px;
+  display: block;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none !important;
+}
