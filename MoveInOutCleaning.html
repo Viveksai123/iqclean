@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/faviconV2.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/faviconV2.png">
@@ -56,191 +57,143 @@
     <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <script>
+        
+    </script>
+    <style>
+      
+    </style>
 
 </head>
 
 <body>
-
-    <!--[if lte IE 9]>
-    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  	<![endif]-->
-
-
-    <!--********************************
-   		Code Start From Here 
-	******************************** -->
-
+   
     <!--==============================
-     Preloader
-  ==============================-->
-  <div class="th-menu-wrapper">
-    <div class="th-menu-area text-center">
-        <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-        <div class="mobile-logo">
-            <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
+      Mobile Menu
+    ============================== -->
+
+    <div class="th-menu-wrapper block xl:hidden">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle text-black"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul class="space-y-1">
+                    <li><a href="aboutus.html" class="block py-3 text-black hover:bg-gray-50">About IQ</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Interior Cleaning</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="interiorcleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="MoveInOutCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Move In/Out Cleaning</a></li>
+                            <li><a href="ShortTermRentalCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Short Term Rental Cleaning</a></li>
+                            <li><a href="SpecialProjects.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects</a></li>
+                            <li><a href="PostConstruction.html" class="block px-4 py-2 text-black hover:bg-gray-50">Post Construction</a></li>
+                            <li><a href="CarpetCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Carpet Cleaning</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Exterior Cleaning</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="service.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="HouseWashing.html" class="block px-4 py-2 text-black hover:bg-gray-50">House Washing</a></li>
+                            <li><a href="WindowCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Window Cleaning</a></li>
+                            <li><a href="SurfaceWashing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Surface Washing</a></li>
+                            <li><a href="RoofCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Roof Cleaning</a></li>
+                            <li><a href="PaperSealing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Paper Sealing</a></li>
+                            <li><a href="events.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects & Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Exterior Lighting</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="Exteriorlighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="SeasonPermanent.html" class="block px-4 py-2 text-black hover:bg-gray-50">All Season Permanent Lighting</a></li>
+                            <li><a href="LandscapeLighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Landscape Lighting</a></li>
+                            <li><a href="PatioLighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Patio Lighting</a></li>
+                            <li><a href="SeasonalHoliday.html" class="block px-4 py-2 text-black hover:bg-gray-50">Seasonal Holiday Lighting</a></li>
+                            <li><a href="SpecialProjectslighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects & Events</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block py-3 text-black hover:bg-gray-50">Book Now</a></li>
+                    <li><a href="#" class="block py-3 text-black hover:bg-gray-50">Customer Login</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="th-mobile-menu">
-            <ul>
-                <li><a href="#">About IQ</a></li>
-                <li class="menu-item-has-children">
-                    <a href="#">Interior Cleaning</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Move In/Out Cleaning</a></li>
-                        <li><a href="#">Short Term Rental Cleaning</a></li>
-                        <li><a href="#">Special Projects</a></li>
-                        <li><a href="#">Post Construction</a></li>
-                        <li><a href="#">Carpet Cleaning</a></li>
+    </div>  
+    <header class="th-header top-0 fixed-top w-100">
+        <div class="sticky-wrapper">
+            <div class="menu-area w-100">
+                <div class="container">
+                    <div class="row d-flex flex-nowrap align-items-center justify-content-center" >
+                        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%;" class="gap-4">
+                        <div class="col-auto ">
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img src="assets/img/hero/logo2.png" alt="Iqcleaning_logo" class="logo-initial">
+                                    <img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo" class="logo-scrolled">
+                                </a>
+                            </div>
+                        </div>
                         
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Exterior Cleaning</a>
-                    <ul class="sub-menu">
-                        <li><a href="service.html">Overview</a></li>
-                        <li><a href="HouseWashing.html">House Washing</a></li>
-                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
-                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
-                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
-                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
-                        <li><a href="events.html">Special Projects & Events</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Exterior Lighting</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">All Season Permanent Lighting</a></li>
-                        <li><a href="#">Landscape Lighting</a></li>
-                        <li><a href="#">Patio Lighting</a></li>
-                        <li><a href="#">Seasonal Holiday Lighting</a></li>
-                        <li><a href="#">Special Projects & Events</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Book Now</a></li>
-                <li><a href="#">Customer Login</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<header class="th-header header-default">
-    <!-- Top Header -->
-    <div class="header-top">
-        <div class="container">
-            <div class="row d-flex flex-row justify-content-between align-items-center gy-2">
-                <div class="col-md-6 col-lg-6 col-xl-auto d-none d-lg-block">
-                    <div class="header-links">
-                        <ul class="d-flex flex-wrap gap-2">
-                            <li><a class="fa-regular fa-phone hover-none"></a> <a href="tel:855.699.8283">855.699.8283</a></li>
-                            <li><a class="fa-sharp fa-regular fa-envelope"></a> <a href="mailto:info@kleanix.com">help@iqhome.care</a></li>
-                            <li><a class="fal fa-location-dot"></a> <a href="https://www.google.com/maps">1155 F St NW #1055, Washington, DC 20004, United States</a></li>
-                        </ul>
+                        <div class="col-auto">
+                            <nav class="main-menu d-none d-xl-inline-block">
+                                <ul class="d-flex">
+                                    <li><a href="aboutus.html" class="nav-link">About IQ</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Interior Cleaning</a>
+                                        <ul class="sub-menu position-absolute">
+                                            <li><a href="interiorcleaning.html">Overview</a></li>
+                                            <li><a href="MoveInOutCleaning.html">Move In/Out Cleaning</a></li>
+                                            <li><a href="ShortTermRentalCleaning.html">Short Term Rental Cleaning</a></li>
+                                            <li><a href="SpecialProjects.html">Special Projects</a></li>
+                                            <li><a href="PostConstruction.html">Post Construction</a></li>
+                                            <li><a href="CarpetCleaning.html">Carpet Cleaning</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Exterior Cleaning</a>
+                                        <ul class="sub-menu position-absolute">
+                                            <li><a href="service.html">Overview</a></li>
+                                            <li><a href="HouseWashing.html">House Washing</a></li>
+                                            <li><a href="WindowCleaning.html">Window Cleaning</a></li>
+                                            <li><a href="SurfaceWashing.html">Surface Washing</a></li>
+                                            <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
+                                            <li><a href="PaperSealing.html">Paper Sealing</a></li>
+                                            <li><a href="events.html">Special Projects & Events</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Exterior Lighting</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="Exteriorlighting.html">Overview</a></li>
+                                            <li><a href="SeasonPermanent.html">All Season Permanent Lighting</a></li>
+                                            <li><a href="LandscapeLighting.html">Landscape Lighting</a></li>
+                                            <li><a href="PatioLighting.html">Patio Lighting</a></li>
+                                            <li><a href="SeasonalHoliday.html">Seasonal Holiday Lighting</a></li>
+                                            <li><a href="SpecialProjectslighting.html">Special Projects & Events</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a href="#" class="nav-link">Customer Login</a></li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i></button>
+                        </div>
+
+                        <div class="col-auto d-none d-xl-flex">
+                            <div class="header-button">
+                                <li href="#" class="th-btn bg-black">Book Now</li>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-auto">
-                    <div class="header-links">
-                        <ul class="d-flex flex-wrap align-items-center gap-3 justify-content-center justify-content-lg-end">
-                            <li>
-                                <div class="social-links d-flex align-items-center gap-2">
-                                    <span class="social-title">Follow Us:</span>
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </li>
-                            <li class="d-none d-md-inline-block">
-                                <div class="dropdown-link">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="assets/img/icon/english.png" alt="icon">
-                                        English
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink1">
-                                        <li>
-                                            <a href="#">English</a>
-                                            <a href="#">German</a>
-                                            <a href="#">French</a>
-                                            <a href="#">Italian</a>
-                                            <a href="#">Latvian</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Sticky Header -->
-    <div class="sticky-wrapper">
-        <div class="menu-area">
-            <div class="container">
-                <div class="row d-flex flex-nowrap gap-4 align-items-center justify-content-between">
-                    <!-- Logo -->
-                    <div class="col-auto">
-                        <div class="header-logo">
-                            <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation -->
-                    <div class="col-auto">
-                        <nav class="main-menu  d-none d-xl-inline-block p-1">
-                            <ul class="d-flex flex-row justify-content-start align-items-center">
-                                <li><a href="#">About IQ</a></li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Interior Cleaning</a>
-                                    <ul class="sub-menu position-absolute">
-                                        <li><a href="#">Overview</a></li>
-                                        <li><a href="#">Move In/Out Cleaning</a></li>
-                                        <li><a href="#">Short Term Rental Cleaning</a></li>
-                                        <li><a href="#">Special Projects</a></li>
-                                        <li><a href="#">Post Construction</a></li>
-                                        <li><a href="#">Carpet Cleaning</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Exterior Cleaning</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="service.html">Overview</a></li>
-                                        <li><a href="HouseWashing.html">House Washing</a></li>
-                                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
-                                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
-                                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
-                                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
-                                        <li><a href="events.html">Special Projects & Events</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Exterior Lighting</a>
-                                    <ul class="sub-menu position-absolute">
-                                        <li><a href="#">Overview</a></li>
-                                        <li><a href="#">All Season Permanent Lighting</a></li>
-                                        <li><a href="#">Landscape Lighting</a></li>
-                                        <li><a href="#">Patio Lighting</a></li>
-                                        <li><a href="#">Seasonal Holiday Lighting</a></li>
-                                        <li><a href="#">Special Projects & Events</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Book Now</a></li>
-                                <li><a href="#">Customer Login</a></li>
-                            </ul>
-                        </nav>
-                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="col-auto d-none d-xl-flex">
-                        <div class="header-button">
-                            <a href="#" class="th-btn bg-black star-btn">Get A Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+    </header>
 
     <!--==============================
     Breadcumb
@@ -495,12 +448,11 @@
                         <h3 class="widget_title">Quick Links</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="index.html">About Us</a></li>
-                                <li><a href="index.html">Our Services</a></li>
-                                <li><a href="index.html">Faq's</a></li>
-                                <li><a href="index.html">Privacy Policy</a></li>
-                                <li><a href="index.html">Book Now!</a></li>
-                                <li><a href="index.html">Contact Us</a></li>
+                                <li><a href="aboutus.html">About Us</a></li>
+                                <li><a href="blog-details.html">Blog details</a></li>
+                                <li><a href="blog.html">Blogs</a></li>
+                                <li><a href="#">Book Now!</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -510,10 +462,10 @@
                         <h3 class="widget_title">Our Services</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="index.html">Interior Home Cleaning</a></li>
-                                <li><a href="index.html">Exeterior Home Cleaning</a></li>
-                                <li><a href="index.html">Exeterior Home Lighting</a></li>
-                                <li><a href="index.html">Seasional Lighting</a></li>
+                                <li><a href="interiorcleaning.html">Interior Home Cleaning</a></li>
+                                <li><a href="service.html">Exeterior Home Cleaning</a></li>
+                                <li><a href="Exteriorlighting.html">Exeterior Home Lighting</a></li>
+                             
                                 <!-- <li><a href="service-details.html">Gas Line Services</a></li>
                                 <li><a href="service-details.html">Bathroom Services</a></li> -->
                             </ul>
@@ -583,22 +535,22 @@
     </div>
 </footer>
 
-    <!--********************************
-			Code End  Here 
-	******************************** -->
+<!--********************************
+        Code End  Here 
+******************************** -->
 
-    <!-- Scroll To Top -->
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-        </svg>
-    </div>
+<!-- Scroll To Top -->
+<div class="scroll-top">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+    </svg>
+</div>
 
-    <!--==============================
-    All Js File
-============================== -->
-    <!-- Jquery -->
-     <script src="assets/js/animation.js"></script>
+
+
+
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/nav.js"></script>
     <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
     <!-- Swiper Js -->
     <script src="assets/js/swiper-bundle.min.js"></script>
