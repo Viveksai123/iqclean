@@ -5575,6 +5575,7 @@ ol.wp-block-rss {
   padding-top: 15px;
   padding-bottom: 15px;
   max-width:200px;
+  margin: 2px;
 }
 
 .header-links ul {
@@ -9035,11 +9036,69 @@ ul.comment-list:has(> .th-comment-item ~ .th-comment-item):first-child > .th-pos
   }
 }
 
+/* Base styles for hero section */
 .hero-style1 {
   position: relative;
   z-index: 6;
-  padding: 358px 0 207px;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-top: 30vh;
+  padding-bottom: 10vh;
+  height: 100vh;
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .hero-style1 {
+      padding-top: 25vh;
+      padding-bottom: 8vh;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .hero-style1 {
+      padding-top: 20vh;
+      padding-bottom: 20vh;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .hero-style1 {
+      padding-top: 15vh;
+      padding-bottom: 15vh;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .hero-style1 {
+      padding-top: 10vh;
+      padding-bottom: 10vh;
+      justify-content: center;
+      min-height: 100vh; /* Ensures minimum height on mobile */
+  }
+}
+
+/* Handle very short screens (landscape mobile) */
+@media (max-height: 500px) {
+  .hero-style1 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      min-height: auto;
+  }
+}
+
+/* Handle extra tall screens */
+@media (min-height: 1200px) {
+  .hero-style1 {
+      padding-top: 20vh;
+      padding-bottom: 20vh;
+      min-height: 60vh;
+  }
 }
 
 .th-hero-wrapper.hero-1{
@@ -21757,4 +21816,160 @@ span.select2-selection.select2-selection--single:focus {
 
 a{
   text-decoration: none !important;
+}
+
+
+
+
+
+/* Remove the icon from submenu items when hovered */
+.sub-menu li a::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Ensure text does not move on hover */
+.sub-menu li a {
+  color: inherit; /* Keeps original text color */
+  padding-left: 0px !important; /* Prevents text from shifting */
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+/* Change text color to orangered when hovering over submenu items */
+.sub-menu li a:hover {
+  color: orangered !important;
+}
+
+.play-button {
+  width: 80px; /* Bigger button */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.85); /* YouTube Red */
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); /* Glowing effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+}
+
+/* YouTube Icon */
+.play-button i {
+  font-size: 32px; /* Bigger icon */
+  color: white;
+}
+
+/* Hover Effect */
+.play-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.9); /* More glow */
+}
+
+/* Pulsing Animation */
+.play-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.5);
+  opacity: 0;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 0.7;
+  }
+  100% {
+      transform: scale(1.7);
+      opacity: 0;
+  }
+}
+
+.shape-mockup.service-2-bg-right {
+  width: 50%; /* Adjust as needed */
+  height: auto;
+}
+
+.shape-mockup.service-2-bg-right-mask {
+  -webkit-mask-image: url('assets/img/bg/service-2-bg-right-mask.png');
+  mask-image: url('assets/img/bg/service-2-bg-right-mask.png');
+  background-color: black;
+}
+
+/* Base styles for nav links */
+.nav-link {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Base styles for submenu */
+.sub-menu {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.sub-menu a {
+  transition: color 0.3s ease;
+}
+
+/* Hover effects for main nav and submenu - not scrolled */
+.nav-link:hover,
+.sub-menu a:hover {
+  color: orangered !important;
+}
+
+/* Scrolled state styles */
+.th-header.scrolled .nav-link {
+  color: #ffffff;
+}
+
+/* Hover effects when scrolled */
+.th-header.scrolled .nav-link:hover {
+  color: orangered !important;
+}
+
+.th-header.scrolled .sub-menu a:hover {
+  color: orangered !important;
+}
+
+/* Ensure submenu links stay black initially */
+.th-header.scrolled .sub-menu a {
+  color: #fff !important;
+}
+
+/* Remove any bootstrap or other framework color classes during hover */
+.text-black:hover {
+  color: orangered !important;
+}
+
+.unique-container {
+  background: rgba(0, 0, 0, 0.6); /* Transparent black background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border-radius: 50px; /* Rounded corners */
+  padding: 25px 30px;
+  display: flex;
+  gap: 30px; /* Spacing between items */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  margin-top:6vw;/* Center the container horizontally */
+}
+
+.unique-item {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 30px; /* Rounded hover effect */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.unique-item:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+  color: #ffffff; /* Orangered hover text */
 }
