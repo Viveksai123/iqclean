@@ -73,7 +73,6 @@
     <!--==============================
       Mobile Menu
     ============================== -->
-
     <div class="th-menu-wrapper block xl:hidden">
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle text-black"><i class="fal fa-times"></i></button>
@@ -83,17 +82,20 @@
             <div class="th-mobile-menu">
                 <ul class="space-y-1">
                     <li><a href="aboutus.html" class="block py-3 text-black hover:bg-gray-50">About IQ</a></li>
+
                     <li class="menu-item-has-children">
                         <a href="#" class="block py-3 text-black hover:bg-gray-50">Interior Cleaning</a>
                         <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
                             <li><a href="interiorcleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
-                            <li><a href="MoveInOutCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Move In/Out Cleaning</a></li>
-                            <li><a href="ShortTermRentalCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Short Term Rental Cleaning</a></li>
-                            <li><a href="SpecialProjects.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects</a></li>
-                            <li><a href="PostConstruction.html" class="block px-4 py-2 text-black hover:bg-gray-50">Post Construction</a></li>
-                            <li><a href="CarpetCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Carpet Cleaning</a></li>
+                            
+                            <li><a href="StandardCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Standard Cleaning</a></li>
+                            <li><a href="DeepCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Deep Cleaning</a></li>
+                            <li><a href="MoveInOutCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Move-In/Move-out Cleaning</a></li>
+               
+                            
                         </ul>
                     </li>
+
                     <li class="menu-item-has-children">
                         <a href="#" class="block py-3 text-black hover:bg-gray-50">Exterior Cleaning</a>
                         <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
@@ -102,33 +104,45 @@
                             <li><a href="WindowCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Window Cleaning</a></li>
                             <li><a href="SurfaceWashing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Surface Washing</a></li>
                             <li><a href="RoofCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Roof Cleaning</a></li>
-                            <li><a href="PaperSealing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Paper Sealing</a></li>
-                            <li><a href="events.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects & Events</a></li>
+                            <li><a href="PaperSealing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Paver Sealing</a></li>
+                            <li><a href="events.html" class="block px-4 py-2 text-black hover:bg-gray-50">Gutter Cleaning</a></li>
+                            
                         </ul>
                     </li>
+                   
+                    
                     <li class="menu-item-has-children">
                         <a href="#" class="block py-3 text-black hover:bg-gray-50">Exterior Lighting</a>
                         <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
                             <li><a href="Exteriorlighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
                             <li><a href="SeasonPermanent.html" class="block px-4 py-2 text-black hover:bg-gray-50">All Season Permanent Lighting</a></li>
-                            <li><a href="LandscapeLighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Landscape Lighting</a></li>
-                            <li><a href="PatioLighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Patio Lighting</a></li>
                             <li><a href="SeasonalHoliday.html" class="block px-4 py-2 text-black hover:bg-gray-50">Seasonal Holiday Lighting</a></li>
-                            <li><a href="SpecialProjectslighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects & Events</a></li>
+                            <li><a href="LandscapeLighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Landscape & Patio Lighting</a></li>
+                            
                         </ul>
+
                     </li>
-                    <li><a href="#" class="block py-3 text-black hover:bg-gray-50">Book Now</a></li>
-                    <li><a href="#" class="block py-3 text-black hover:bg-gray-50">Customer Login</a></li>
+                   
                 </ul>
+
+                <div class="col-auto mt-4 ml-1 d-flex flex-row justify-content-center align-items-center">
+                    <div class="header-button ">
+                      
+                          <li class="th-btn star-btn text-white bg-black" onclick="window.location.href='https://www.iqhome.care/booking';">
+                            Book Now
+                          </li>
+                    </div>
+                </div>
             </div>
         </div>
     </div>  
+   
     <header class="th-header top-0 fixed-top w-100">
         <div class="sticky-wrapper">
             <div class="menu-area w-100">
                 <div class="container">
                         
-                            <div class="row d-flex align-items-center justify-content-between flex-nowrap">
+                            <div class="row d-flex flex-row justify-content-between align-items-center flex-nowrap">
                             <div class="col-auto">
                                 <div class="header-logo">
                                     <a href="index.html">
@@ -142,9 +156,16 @@
                                 <nav class="main-menu d-none d-xl-inline-block">
                                     <ul class="d-flex">
                                         <li><a href="aboutus.html" class="nav-link">About IQ</a></li>
-                                        <li>
-                                            <a href="interiorcleaning.html" class="nav-link">Interior Cleaning</a>
-                                            
+                                        <li class="menu-item-has-children">
+                                            <a href="#" class="nav-link">Interior Cleaning</a>
+                                            <ul class="sub-menu position-absolute">
+                                                <li><a href="interiorcleaning.html">Overview</a></li>
+                                                <li><a href="MoveInOutCleaning.html">Move-In/Move-Out Cleaning</a></li>
+                                                <li><a href="StandardCleaning.html">Standard Cleaning</a></li>
+                                             
+                                                <li><a href="DeepCleaning.html">Deep Cleaning</a></li>
+                                               
+                                            </ul>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a href="#" class="nav-link">Exterior Cleaning</a>
@@ -154,38 +175,50 @@
                                                 <li><a href="WindowCleaning.html">Window Cleaning</a></li>
                                                 <li><a href="SurfaceWashing.html">Surface Washing</a></li>
                                                 <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
-                                                <li><a href="PaperSealing.html">Paper Sealing</a></li>
-                                                <li><a href="events.html">Special Projects & Events</a></li>
+                                                <li><a href="PaperSealing.html">Paver Sealing</a></li>
+                                                <li><a href="events.html">Gutter Cleaning</a></li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a href="#" class="nav-link">Exterior Lighting</a>
                                             <ul class="sub-menu">
                                                 <li><a href="Exteriorlighting.html">Overview</a></li>
-                                                <li><a href="SeasonPermanent.html">All Season Permanent Lighting</a></li>
-                                                <li><a href="LandscapeLighting.html">Landscape Lighting</a></li>
-                                                <li><a href="PatioLighting.html">Patio Lighting</a></li>
-                                                <li><a href="SeasonalHoliday.html">Seasonal Holiday Lighting</a></li>
-                                                <li><a href="SpecialProjectslighting.html">Special Projects & Events</a></li>
+                                                <li><a href="SeasonPermanent.html" >All Season Permanent Lighting</a></li>
+                                                <li><a href="SeasonalHoliday.html" >Seasonal Holiday Lighting</a></li>
+                                                <li><a href="LandscapeLighting.html" >Landscape & Patio Lighting</a></li>
+                                                
                                             </ul>
                                         </li>
-                                  
-                                        <li class="nav-item">
-                                            <a href="contact.html" class="nav-link d-flex align-items-center gap-2">
-                                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 hover:bg-orange-500 transition duration-300">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M22 16.92V19a2 2 0 0 1-2 2c-3-.31-5.57-1.53-7.81-3.47A16.92 16.92 0 0 1 3.47 9.99 16.92 16.92 0 0 1 2 3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 .91l2 3a2 2 0 0 1-.5 2.61L8 9a12 12 0 0 0 5 5l1.5-1.5a2 2 0 0 1 2.5-.5l3 2a2 2 0 0 1 .5 2.42z"/>
-                                                    </svg>
-                                                    
-                                                </div>
-                                            
-                                                
-                                               
-                                                855.699.8283
-                                            </a>
-                                            
-                                            
-                                        </li>
+                                        <li class="nav-item d-flex gap-1">
+                                            <!-- Icon Section -->
+                                            <div class="d-flex icon-wrapper menu-item-has-children">
+                                                <!-- New, cooler message icon -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"></path>
+                                                    <line x1="9" y1="9" x2="15" y2="9"></line>
+                                                    <line x1="9" y1="13" x2="15" y2="13"></line>
+                                                </svg>
+                                            </div>
+                                          
+                                            <div class="icon-wrapper menu-item-has-children">
+                                              
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                                  <path d="M22 16.92V19a2 2 0 0 1-2 2c-3-.31-5.57-1.53-7.81-3.47A16.92 16.92 0 0 1 3.47 9.99 16.92 16.92 0 0 1 2 3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 .91l2 3a2 2 0 0 1-.5 2.61L8 9a12 12 0 0 0 5 5l1.5-1.5a2 2 0 0 1 2.5-.5l3 2a2 2 0 0 1 .5 2.42z"></path>
+                                                </svg>
+                                           
+                                            </div>
+                                          
+                                            <!-- Text Section -->
+                                            <div class="text-wrapper">
+                                              <p>Text Or Call</p>
+                                              <p >855.699.8283</p>
+                                            </div>
+                                          </li>
+                                          
+                                          
+                                          
+                                          
+                                          
                                         
                                     </ul>
                                 </nav>
@@ -194,12 +227,9 @@
                         
                             <div class="col-auto d-none d-xl-flex">
                                 <div class="header-button">
-                                    <li class="th-btn star-btn text-white bg-black" onclick="window.location.href='https://www.iqhome.care/booking';">
-                                        Text Now
-                                      </li>
-                                      <li class="th-btn star-btn text-white bg-black" onclick="window.location.href='https://www.iqhome.care/booking';">
+                                    <li class="th-btn star-btn text-white book-now-btn" onclick="window.location.href='https://www.iqhome.care/booking';">
                                         Book Now
-                                      </li>
+                                    </li>
                                 </div>
                             </div>
                         </div>
@@ -243,8 +273,8 @@
 
                       <div class="unique-container d-none d-md-block">
                         <a href="interiorcleaning.html" class="unique-item">Interior Cleaning</a>
-                        <a href="service.html" class="unique-item">Exeterior Cleaning</a>
-                        <a href="Exteriorlighting.html" class="unique-item">Exeterior Lighting</a>
+                        <a href="service.html" class="unique-item">Exterior Cleaning</a>
+                        <a href="Exteriorlighting.html" class="unique-item">Exterior Lighting</a>
          
                     </div>
   
@@ -261,7 +291,7 @@
                 <div class="col-xl-6 text-center text-xl-start animate__animated animate__zoomInRight">
                     <div class="title-area">
                         <span class="sub-title before-none lg-after-none justify-content-center justify-content-xl-start">Why choose us</span>
-                        <h2 class="sec-title">Choose Excellence, Choose IQCleaning</h2>
+                        <h2 class="sec-title">Choose Excellence, Choose IQ Home Care</h2>
 
                     </div>
                 </div>
@@ -351,7 +381,7 @@
                             <img src="assets/img/icon/feature-1.svg" alt="Flexible Scheduling Icon">
                         </div>
                         <h3 class="box-title">Flexible Scheduling</h3>
-                        <p class="feature-item__text">At IQ Cleaning, we understand your busy lifestyle. Our flexible scheduling options ensure we work around your availability to provide seamless cleaning services.</p>
+                        <p class="feature-item__text">At IQ Home Care, we understand your busy lifestyle. Our flexible scheduling options ensure we work around your availability to provide seamless cleaning services.</p>
                     </div>
                 </div>
                 <!-- Feature 2 -->
@@ -361,7 +391,7 @@
                             <img src="assets/img/icon/feature-2.svg" alt="Quality Assurance Icon">
                         </div>
                         <h3 class="box-title">Unmatched Quality</h3>
-                        <p class="feature-item__text">Our professional team at IQ Cleaning is committed to delivering top-tier cleaning services with meticulous attention to detail and industry-best practices.</p>
+                        <p class="feature-item__text">Our professional team at IQ Home Care is committed to delivering top-tier cleaning services with meticulous attention to detail and industry-best practices.</p>
                     </div>
                 </div>
                 <!-- Feature 3 -->
@@ -371,7 +401,7 @@
                             <img src="assets/img/icon/feature-3.svg" alt="Certified Team Icon">
                         </div>
                         <h3 class="box-title">Certified Professionals</h3>
-                        <p class="feature-item__text">IQ Cleaning’s certified professionals bring expertise, reliability, and trustworthiness to every cleaning task, ensuring exceptional results every time.</p>
+                        <p class="feature-item__text">IQ Home Care's certified professionals bring expertise, reliability, and trustworthiness to every cleaning task, ensuring exceptional results every time.</p>
                     </div>
                 </div>
             </div>
@@ -507,7 +537,7 @@
                 <div class="col-xxl-9">
                     <div class="slider-area">
                         <div class="swiper th-slider service-slider-2" id="serviceSlider2" data-slider-options='{"loop":true,"paginationType":"progressbar","breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper ">
 
                                 <div class="swiper-slide">
                                     <div class="service-card style-2" data-bg-src="assets/img/bg/service-bg-2-1.png">
@@ -633,8 +663,8 @@
                             </div>
 
                             <div class="pagination-wrap">
-                                <div class="slider-pagination2"></div>
-                                <div class="slider-pagination color-black"></div>
+                                <!-- <div class="slider-pagination2"></div> -->
+                                <div class="slider-pagination bg-white text-black "></div>
                             </div>
                         </div>
                     </div>
@@ -642,6 +672,8 @@
             </div>
         </div>
     </section>
+
+
     <!-- why choose us -->
 
   
@@ -677,6 +709,7 @@
         </div>
     </section>
     <!--==============================
+
 Service Offer 
 ==============================-->
     <div class="service-offer-sec-3 overflow-hidden space-bottom">
@@ -710,6 +743,7 @@ Service Offer
 
         </div>
     </div><!--==============================
+
 Testimonial Area  
 ==============================-->
 <section class="testi-card-area-2 overflow-hidden space-bottom " id="testi-sec">
@@ -842,13 +876,17 @@ Blog Area
                                 <div class="about-logo">
                                     <a href="index.html"><img src="assets/img/favicons/logo.png" alt="Iqcleaning_logo"></a>
                                 </div>
-                                <p class="about-text">House cleaning services provide professional cleaning of residential spaces. These services homes,</p>
+                                <p class="about-text">Where you'll find smart solutions for a cleaner, brighter home! </p>
                                 <div class="about-bottom">
-                                    <h4 class="about-bottom-title">Working Hour:</h4>
                                     <div class="bottom-info">
-                                        <div class="icon"><i class="fa-solid fa-clock"></i> </div>
-                                        <p>Monday to Saturday: 9AM - 8PM Sunday is Closed</p>
-                                    </div>
+                                    <div class="icon"><i class="fa-solid fa-clock"></i> </div>
+                                    <h4 class="about-bottom-title">OPERATING HOURS:</h4>
+                                </div>
+                                <div class="" style="margin-left: 15px;">
+                                    <p style="color: white; margin-bottom: 5px;">Mon - Fri: 8:30AM - 5:30PM</p>
+                                    <p style="color: white; margin-bottom: 5px;">Sat: 9AM - 4PM</p>
+                                    <p style="color: white; margin-bottom: 5px;">Sun: Closed</p>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -860,10 +898,11 @@ Blog Area
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
                                     <li><a href="aboutus.html">About Us</a></li>
-                                    <li><a href="blog.html">Blogs</a></li>
+                                    
                                     <li><a href="#">Book Now!</a></li>
-                                    <li><a href="#">Customer Login</a></li>
-                                    <li><a href="#">Iq Real Estate</a></li>
+                                    <li><a href="#">Client Login</a></li>
+                                    <li><a href="#">IQ Real Estate Partners</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
                                     
                                 </ul>
                             </div>
@@ -877,6 +916,7 @@ Blog Area
                                     <li><a href="interiorcleaning.html">Interior Home Cleaning</a></li>
                                     <li><a href="service.html">Exeterior Home Cleaning</a></li>
                                     <li><a href="Exteriorlighting.html">Exeterior Home Lighting</a></li>
+                                    <li><a href="SpecialProjects.html">Special Projects & Events</a></li>
                                  
                                  
                                     <!-- <li><a href="service-details.html">Gas Line Services</a></li>
@@ -889,22 +929,18 @@ Blog Area
                         <div class="widget footer-widget">
                             <h3 class="widget_title">Contact Us</h3>
                             <div class="th-widget-contact">
-                                <div class="info-box">
-                                    <div class="info-box_icon">
-                                        <i class="fas fa-location-dot"></i>
-                                    </div>
+                                <!-- <div class="info-box">
+                                   
                                     <div class="info-contnt">
-                                        <h4 class="footer-info-title">Text Us</h4>
-                                        <a href="contact.html" class="text-white hover:text-[#FF4500] transition duration-300">Contact Us</a>
+                                        <h4 class="footer-info-title">Reach Us</h4>
+                                        
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="info-box">
-                                    <div class="info-box_icon">
-                                        <i class="fas fa-phone"></i>
-                                    </div>
+                                    
 
                                     <div class="info-contnt">
-                                        <h4 class="footer-info-title">Call Us</h4>
+                                        <h4 class="footer-info-title">Call . Text . WhatsApp</h4>
                                         
 
                                         <p class="info-box_text">
@@ -913,9 +949,7 @@ Blog Area
                                     </div>
                                 </div>
                                 <div class="info-box">
-                                    <div class="info-box_icon">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
+                                    
 
                                     <div class="info-contnt">
                                         <h4 class="footer-info-title">Email Us</h4>
@@ -925,6 +959,15 @@ Blog Area
                                     </div>
 
                                 </div>
+                                <div class="d-flex">
+                               
+                                <div class="info-box_icon">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                                <div class="info-box_icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -935,7 +978,7 @@ Blog Area
             <div class="container">
                 <div class="row gy-3 align-items-center">
                     <div class="col-lg-6">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="index.html">Iq Home.Care</a>. All Rights Reserved.</p>
+                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="index.html">IQ Home.Care</a>. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6 text-center text-lg-end">
                         <div class="th-social"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
@@ -949,16 +992,14 @@ Blog Area
         </div>
     </footer>
 
-    <!--********************************
-			Code End  Here 
-	******************************** -->
+   
 
     <!-- Scroll To Top -->
-    <div class="scroll-top">
+    <!-- <div class="scroll-top">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
         </svg>
-    </div>
+    </div> -->
 
 
 

@@ -86,9 +86,9 @@ Version: 1.0.0
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
 :root {
-  --theme-color: #FF4500;
+  --theme-color: #FF6F3C;
   --theme-color2: #fb713f;
-  --theme-color3: #FF4500;
+  --theme-color3: #FF6F3C;
   --title-color: #1F1F1F;
   --body-color: #797E88;
   --smoke-color: #F7F7F7;
@@ -1221,6 +1221,7 @@ textarea.is-invalid {
   display: block;
   text-align: center;
   background-color: var(--smoke-color2);
+  
 }
 
 .th-menu-wrapper .mobile-logo svg {
@@ -2785,7 +2786,8 @@ hr.title-line {
 }
 
 .bg-theme2 {
-  background-color:orangered !important;
+  background-color:
+  #FF6F3C !important;
 }
 
 .bg-smoke {
@@ -5394,6 +5396,7 @@ ol.wp-block-rss {
   top: 100%;
   left: 0;
   background-color: var(--white-color);
+  backdrop-filter: blur(10px); /* Apply blur effect */
   visibility: hidden;
   min-width: 230px;
   width: -webkit-max-content;
@@ -5443,6 +5446,7 @@ ol.wp-block-rss {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+          backdrop-filter: blur(10px);
 }
 
 .main-menu ul.sub-menu li a {
@@ -5654,14 +5658,14 @@ ol.wp-block-rss {
 
 .header-top {
   padding: 6px 0;
-  background-color: orangered;
+  background-color: #FF6F3C;
   --body-color: #fff;
 }
 
 
 
 .header-top a:hover {
-  color: orange;
+  color: #FF6F3C;
 }
 
 /* Header Default ---------------------------------- */
@@ -5676,14 +5680,14 @@ ol.wp-block-rss {
 }
 
 .header-default .text{
-  color:orangered;
+  color:#FF6F3C;
 }
 
 .header-default .header-top {
   position: relative;
   padding: 11px 0;
   --body-color: #fff;
-  background-color: orangered;
+  background-color: #FF6F3C;
   border-radius: 0 0 57px 57px;
   max-width: 1620px;
   margin: 0 auto;
@@ -6166,6 +6170,7 @@ ol.wp-block-rss {
   opacity: 0;
   z-index: -1;
   box-shadow: 0px 4px 15px rgba(1, 15, 28, 0.06);
+  backdrop-filter: blur(10px);
   border-radius: 0;
   -webkit-transform: scaleY(0);
       -ms-transform: scaleY(0);
@@ -6316,7 +6321,7 @@ ol.wp-block-rss {
 
 .header-layout3 .header-top {
   --body-color: #54595F;
-  background-color: orangered;
+  background-color: #FF6F3C;
   border-bottom: 1px solid var(--th-border-color);
 }
 
@@ -17706,13 +17711,13 @@ span.select2-selection.select2-selection--single:focus {
 .service-slider-2 .slider-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal {
   top: 98%;
   left: 130px;
-  background-color: orangered;
+  background-color: #FF6F3C;
   width: 100%;
 }
 
 .service-slider-2 .slider-pagination2 {
   /* Small devices */
-  color: orangered;
+  color: #FF6F3C;
 }
 
 @media (max-width: 767px) {
@@ -17723,7 +17728,7 @@ span.select2-selection.select2-selection--single:focus {
 
 .service-slider-2 .slider-pagination2 .current-slide {
   font-size: 54px;
-  color: orangered;
+  color: #FF6F3C;
   font-weight: 700;
   margin-right: 5px;
 }
@@ -17731,11 +17736,12 @@ span.select2-selection.select2-selection--single:focus {
 .service-slider-2 .slider-pagination2 .total-slides {
   font-size: 17px;
   position: relative;
-  color: orangered;
+  color: #FF6F3C ;
 }
 
 .service-slider-2 .slider-pagination2 .total-slides:before {
   content: "/";
+  
   
 }
 
@@ -21805,6 +21811,7 @@ span.select2-selection.select2-selection--single:focus {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
   text-decoration: none;
+  backdrop-filter: blur(10px);
 }
 
 .sub-menu a {
@@ -21835,9 +21842,9 @@ a{
   transition: color 0.3s ease-in-out; /* Smooth color transition */
 }
 
-/* Change text color to orangered when hovering over submenu items */
+/* Change text color to #FF6F3C when hovering over submenu items */
 .sub-menu li a:hover {
-  color: orangered !important;
+  color: #FF6F3C !important;
 }
 
 .play-button {
@@ -21909,6 +21916,7 @@ a{
 .sub-menu {
   background: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
 }
 
 .sub-menu a {
@@ -21918,7 +21926,7 @@ a{
 /* Hover effects for main nav and submenu - not scrolled */
 .nav-link:hover,
 .sub-menu a:hover {
-  color: orangered !important;
+  color: #FF6F3C !important;
 }
 
 /* Scrolled state styles */
@@ -21926,13 +21934,17 @@ a{
   color: #ffffff;
 }
 
+.th-header.scrolled .sub-menu {
+  backdrop-filter: blur(10px) !important; 
+}
+
 /* Hover effects when scrolled */
 .th-header.scrolled .nav-link:hover {
-  color: orangered !important;
+  color: #FF6F3C !important;
 }
 
 .th-header.scrolled .sub-menu a:hover {
-  color: orangered !important;
+  color: #FF6F3C !important;
 }
 
 /* Ensure submenu links stay black initially */
@@ -21942,7 +21954,7 @@ a{
 
 /* Remove any bootstrap or other framework color classes during hover */
 .text-black:hover {
-  color: orangered !important;
+  color: #FF6F3C !important;
 }
 
 .unique-container {
@@ -21975,14 +21987,17 @@ a{
 }
 
 .th-btn:hover {
-  background-color: orangered !important;
+  background-color: #FF6F3C !important;
   color: white !important; /* Optional: Change text color for contrast */
 }
 .slider-pagination2 .swiper-pagination-progressbar-fill {
-  background-color: #FF4500 !important;
+  background-color: #FF6F3C !important;
+}
+.slider-pagination .swiper-pagination-progressbar-fill {
+  background-color: #FF6F3C !important;
 }
 .org{
-  color: orangered !important;
+  color: #FF6F3C !important;
 }
 
 .interior-hero-section {
@@ -22025,4 +22040,143 @@ a{
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+}
+
+/* Body background */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* List item styles */
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Icon wrapper styles */
+.icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f97316; /* Orange */
+  transition: background-color 0.3s ease;
+}
+
+.icon-wrapper:hover {
+  background-color: #f57c00; /* Lighter orange */
+}
+
+/* Icon SVG styles */
+.icon-wrapper a svg {
+  fill: white;
+  stroke: none;
+}
+
+/* Text wrapper styles */
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  margin-top: 12px;
+}
+
+.text-wrapper p {
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Highlighted orange text */
+.text-wrapper p:first-child {
+  color: #f97316; /* Orange */
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Bold white phone number */
+.text-wrapper p:last-child {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Scroll effect for text */
+.scrolled .text-wrapper p:first-child,
+.scrolled .text-wrapper p:last-child {
+  color: black !important;
+}
+
+.text-wrapper p {
+  font-size: 8px; /* Adjust size as needed */
+  line-height: 1.2; /* Optional for better readability */
+  margin-top: 0; /* Removes extra spacing */
+  color: white; /* Ensures the text remains visible on a dark background */
+}
+
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+  .nav-item {
+    visibility: hidden !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+
+.mobile-logo img {
+  width: 180px; /* Adjust this value as needed */
+  height: auto; /* Keeps the aspect ratio intact */
+}
+
+@media (max-width: 767px) {
+  .interior-hero-section .interior-hero-heading {
+      font-size: 1.8rem; /* Reduced from the default desktop size */
+      margin-bottom: 1rem; /* Add some bottom margin/padding */
+  }
+
+  .interior-hero-section {
+      padding: 30px 0; /* Add vertical padding */
+  }
+
+  .interior-hero-section .container {
+      padding-left: 15px;
+      padding-right: 15px; /* Add some horizontal padding */
+  }
+
+  .interior-hero-section .interior-hero-text {
+      font-size: 0.95rem; /* Slightly reduce text size for mobile */
+  }
+}
+
+textarea::-webkit-scrollbar {
+  width: 2px; /* Makes scrollbar thinner */
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Scrollbar color */
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: transparent; /* Makes track invisible */
+}
+
+.book-now-btn {
+    background-color: #FF6F3C !important;
+    transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+    background-color: #000000 !important;
 }

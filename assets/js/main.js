@@ -1,39 +1,5 @@
 (function ($) {
     "use strict";
-    /*=================================
-        JS Index Here
-    ==================================*/
-    /*
-    01. On Load Function
-    02. Preloader
-    03. Mobile Menu
-    04. Sticky fix
-    05. Scroll To Top
-    06. Set Background Image Color & Mask
-    07. Global Slider
-    08. Ajax Contact Form
-    09. Search Box Popup
-    10. Popup Sidemenu
-    11. Magnific Popup
-    12. Section Position
-    13. Filter
-    14. Counter Up
-    15. Shape Mockup
-    16. Progress Bar Animation
-    17. Countdown
-    18. Image to SVG Code
-    19. Tilt Active
-    21. Pricing-switch & Tab
-    22. Gallery Active
-    23. Circle Progress
-    24 Date Time Picker 
-    00. Woocommerce Toggle
-    00. Right Click Disable
-    */
-    /*=================================
-        JS Index End
-    ==================================*/
-    /*
 
   /*---------- 01. On Load Function ----------*/
     $(window).on("load", function () {

@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/faviconV2.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/faviconV2.png">
@@ -56,191 +57,143 @@
     <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <script>
+        
+    </script>
+    <style>
+      
+    </style>
 
 </head>
 
 <body>
-
-    <!--[if lte IE 9]>
-    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  	<![endif]-->
-
-
-    <!--********************************
-   		Code Start From Here 
-	******************************** -->
-
+   
     <!--==============================
-     Preloader
-  ==============================-->
-  <div class="th-menu-wrapper">
-    <div class="th-menu-area text-center">
-        <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-        <div class="mobile-logo">
-            <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
+      Mobile Menu
+    ============================== -->
+
+    <div class="th-menu-wrapper block xl:hidden">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle text-black"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul class="space-y-1">
+                    <li><a href="aboutus.html" class="block py-3 text-black hover:bg-gray-50">About IQ</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Interior Cleaning</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="interiorcleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="MoveInOutCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Move In/Out Cleaning</a></li>
+                            <li><a href="ShortTermRentalCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Short Term Rental Cleaning</a></li>
+                            <li><a href="SpecialProjects.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects</a></li>
+                            <li><a href="PostConstruction.html" class="block px-4 py-2 text-black hover:bg-gray-50">Post Construction</a></li>
+                            <li><a href="CarpetCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Carpet Cleaning</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Exterior Cleaning</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="service.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="HouseWashing.html" class="block px-4 py-2 text-black hover:bg-gray-50">House Washing</a></li>
+                            <li><a href="WindowCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Window Cleaning</a></li>
+                            <li><a href="SurfaceWashing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Surface Washing</a></li>
+                            <li><a href="RoofCleaning.html" class="block px-4 py-2 text-black hover:bg-gray-50">Roof Cleaning</a></li>
+                            <li><a href="PaperSealing.html" class="block px-4 py-2 text-black hover:bg-gray-50">Paper Sealing</a></li>
+                            <li><a href="events.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects & Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="block py-3 text-black hover:bg-gray-50">Exterior Lighting</a>
+                        <ul class="sub-menu bg-white shadow-md rounded-md mt-1">
+                            <li><a href="Exteriorlighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Overview</a></li>
+                            <li><a href="SeasonPermanent.html" class="block px-4 py-2 text-black hover:bg-gray-50">All Season Permanent Lighting</a></li>
+                            <li><a href="LandscapeLighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Landscape Lighting</a></li>
+                            <li><a href="PatioLighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Patio Lighting</a></li>
+                            <li><a href="SeasonalHoliday.html" class="block px-4 py-2 text-black hover:bg-gray-50">Seasonal Holiday Lighting</a></li>
+                            <li><a href="SpecialProjectslighting.html" class="block px-4 py-2 text-black hover:bg-gray-50">Special Projects & Events</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block py-3 text-black hover:bg-gray-50">Book Now</a></li>
+                    <li><a href="#" class="block py-3 text-black hover:bg-gray-50">Customer Login</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="th-mobile-menu">
-            <ul>
-                <li><a href="#">About IQ</a></li>
-                <li class="menu-item-has-children">
-                    <a href="#">Interior Cleaning</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Move In/Out Cleaning</a></li>
-                        <li><a href="#">Short Term Rental Cleaning</a></li>
-                        <li><a href="#">Special Projects</a></li>
-                        <li><a href="#">Post Construction</a></li>
-                        <li><a href="#">Carpet Cleaning</a></li>
+    </div>  
+    <header class="th-header top-0 fixed-top w-100">
+        <div class="sticky-wrapper">
+            <div class="menu-area w-100">
+                <div class="container">
+                    <div class="row d-flex flex-nowrap align-items-center justify-content-center" >
+                        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%;" class="gap-4">
+                        <div class="col-auto ">
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img src="assets/img/hero/logo2.png" alt="Iqcleaning_logo" class="logo-initial">
+                                    <img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo" class="logo-scrolled">
+                                </a>
+                            </div>
+                        </div>
                         
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Exterior Cleaning</a>
-                    <ul class="sub-menu">
-                        <li><a href="service.html">Overview</a></li>
-                        <li><a href="HouseWashing.html">House Washing</a></li>
-                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
-                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
-                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
-                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
-                        <li><a href="events.html">Special Projects & Events</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">Exterior Lighting</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">All Season Permanent Lighting</a></li>
-                        <li><a href="#">Landscape Lighting</a></li>
-                        <li><a href="#">Patio Lighting</a></li>
-                        <li><a href="#">Seasonal Holiday Lighting</a></li>
-                        <li><a href="#">Special Projects & Events</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Book Now</a></li>
-                <li><a href="#">Customer Login</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<header class="th-header header-default">
-    <!-- Top Header -->
-    <div class="header-top">
-        <div class="container">
-            <div class="row d-flex flex-row justify-content-between align-items-center gy-2">
-                <div class="col-md-6 col-lg-6 col-xl-auto d-none d-lg-block">
-                    <div class="header-links">
-                        <ul class="d-flex flex-wrap gap-2">
-                            <li><a class="fa-regular fa-phone hover-none"></a> <a href="tel:855.699.8283">855.699.8283</a></li>
-                            <li><a class="fa-sharp fa-regular fa-envelope"></a> <a href="mailto:info@kleanix.com">help@iqhome.care</a></li>
-                            <li><a class="fal fa-location-dot"></a> <a href="https://www.google.com/maps">1155 F St NW #1055, Washington, DC 20004, United States</a></li>
-                        </ul>
+                        <div class="col-auto">
+                            <nav class="main-menu d-none d-xl-inline-block">
+                                <ul class="d-flex">
+                                    <li><a href="aboutus.html" class="nav-link">About IQ</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Interior Cleaning</a>
+                                        <ul class="sub-menu position-absolute">
+                                            <li><a href="interiorcleaning.html">Overview</a></li>
+                                            <li><a href="MoveInOutCleaning.html">Move In/Out Cleaning</a></li>
+                                            <li><a href="ShortTermRentalCleaning.html">Short Term Rental Cleaning</a></li>
+                                            <li><a href="SpecialProjects.html">Special Projects</a></li>
+                                            <li><a href="PostConstruction.html">Post Construction</a></li>
+                                            <li><a href="CarpetCleaning.html">Carpet Cleaning</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Exterior Cleaning</a>
+                                        <ul class="sub-menu position-absolute">
+                                            <li><a href="service.html">Overview</a></li>
+                                            <li><a href="HouseWashing.html">House Washing</a></li>
+                                            <li><a href="WindowCleaning.html">Window Cleaning</a></li>
+                                            <li><a href="SurfaceWashing.html">Surface Washing</a></li>
+                                            <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
+                                            <li><a href="PaperSealing.html">Paper Sealing</a></li>
+                                            <li><a href="events.html">Special Projects & Events</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#" class="nav-link">Exterior Lighting</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="Exteriorlighting.html">Overview</a></li>
+                                            <li><a href="SeasonPermanent.html">All Season Permanent Lighting</a></li>
+                                            <li><a href="LandscapeLighting.html">Landscape Lighting</a></li>
+                                            <li><a href="PatioLighting.html">Patio Lighting</a></li>
+                                            <li><a href="SeasonalHoliday.html">Seasonal Holiday Lighting</a></li>
+                                            <li><a href="SpecialProjectslighting.html">Special Projects & Events</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a href="#" class="nav-link">Customer Login</a></li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i></button>
+                        </div>
+
+                        <div class="col-auto d-none d-xl-flex">
+                            <div class="header-button">
+                                <li href="#" class="th-btn bg-black">Book Now</li>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-auto">
-                    <div class="header-links">
-                        <ul class="d-flex flex-wrap align-items-center gap-3 justify-content-center justify-content-lg-end">
-                            <li>
-                                <div class="social-links d-flex align-items-center gap-2">
-                                    <span class="social-title">Follow Us:</span>
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </li>
-                            <li class="d-none d-md-inline-block">
-                                <div class="dropdown-link">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="assets/img/icon/english.png" alt="icon">
-                                        English
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink1">
-                                        <li>
-                                            <a href="#">English</a>
-                                            <a href="#">German</a>
-                                            <a href="#">French</a>
-                                            <a href="#">Italian</a>
-                                            <a href="#">Latvian</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Sticky Header -->
-    <div class="sticky-wrapper">
-        <div class="menu-area">
-            <div class="container">
-                <div class="row d-flex flex-nowrap gap-4 align-items-center justify-content-between">
-                    <!-- Logo -->
-                    <div class="col-auto">
-                        <div class="header-logo">
-                            <a href="index.html"><img src="assets/img/favicons/logo1.png" alt="Iqcleaning_logo"></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation -->
-                    <div class="col-auto">
-                        <nav class="main-menu  d-none d-xl-inline-block p-1">
-                            <ul class="d-flex flex-row justify-content-start align-items-center">
-                                <li><a href="#">About IQ</a></li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Interior Cleaning</a>
-                                    <ul class="sub-menu position-absolute">
-                                        <li><a href="#">Overview</a></li>
-                                        <li><a href="#">Move In/Out Cleaning</a></li>
-                                        <li><a href="#">Short Term Rental Cleaning</a></li>
-                                        <li><a href="#">Special Projects</a></li>
-                                        <li><a href="#">Post Construction</a></li>
-                                        <li><a href="#">Carpet Cleaning</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Exterior Cleaning</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="service.html">Overview</a></li>
-                                        <li><a href="HouseWashing.html">House Washing</a></li>
-                                        <li><a href="WindowCleaning.html">Window Cleaning</a></li>
-                                        <li><a href="SurfaceWashing.html">Surface Washing</a></li>
-                                        <li><a href="RoofCleaning.html">Roof Cleaning</a></li>
-                                        <li><a href="PaperSealing.html">Paper Sealing</a></li>
-                                        <li><a href="events.html">Special Projects & Events</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children position-relative">
-                                    <a href="#">Exterior Lighting</a>
-                                    <ul class="sub-menu position-absolute">
-                                        <li><a href="#">Overview</a></li>
-                                        <li><a href="#">All Season Permanent Lighting</a></li>
-                                        <li><a href="#">Landscape Lighting</a></li>
-                                        <li><a href="#">Patio Lighting</a></li>
-                                        <li><a href="#">Seasonal Holiday Lighting</a></li>
-                                        <li><a href="#">Special Projects & Events</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Book Now</a></li>
-                                <li><a href="#">Customer Login</a></li>
-                            </ul>
-                        </nav>
-                        <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="col-auto d-none d-xl-flex">
-                        <div class="header-button">
-                            <a href="#" class="th-btn bg-black star-btn">Get A Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+    </header>
 
     <!--==============================
     Breadcumb
@@ -248,145 +201,88 @@
     <!-- data-overlay="title" data-opacity="1" -->
     <div class="th-hero-wrapper hero-1" id="hero" data-bg-src="assets/img/hero/hero.jpg">
         <div class="hero-inner">
-
             <div class="container">
                 <div class="hero-style1">
                     <span class="sub-title text-white">
                         We Clean, You Shine
                     </span>
-                    <h1 class="hero-title white-color ">
-                        Carpet Cleaning
+                    <h1 class="hero-title white-color">
+                        Gutter Cleaning
                     </h1>
                     <ul class="breadcumb-menu">
                         <li><a href="index.html">Home</a></li>
-                        <li><a class="white-color">Interior Cleaning</a></li>
-                        <a class="white-color">Carpet Cleaning</a>
+                        <li><a class="white-color">Exterior Cleaning</a></li>
+                        <a class="white-color">Gutter Cleaning</a>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    
+
 <section class="space-top space-extra2-bottom">
     <div class="container">
         <div class="row">
             <div class="col-xxl-8 col-lg-8">
                 <div class="page-single mb-30">
                     <div class="page-img">
-                        <img src="assets/img/hero/hero.jpg" alt="Carpenter Cleaning Image">
+                        <img src="assets/img/hero/hero.jpg" alt="Gutter Cleaning Image">
                     </div>
                     <div class="page-content">
-                        <h2 class="sec-title page-title">Carpenter Cleaning</h2>
-                        <p>Carpenter cleaning is an essential service for maintaining and restoring wooden furniture, floors, and structures. We specialize in professional wood cleaning solutions that remove dust, stains, and debris, preserving the natural beauty and durability of wooden surfaces.</p>
-                        <p class="mb-50">Using advanced cleaning techniques and high-quality wood-friendly products, we ensure deep cleaning without damaging the texture or finish of your woodwork. Our methods are carefully designed to restore wooden surfaces while providing long-lasting protection.</p>
+                        <h2 class="sec-title page-title">Gutter Cleaning</h2>
+                        <p>Professional gutter cleaning is essential for protecting your home from water damage. Our thorough service removes leaves, debris, and blockages from your gutters and downspouts to ensure proper water drainage. We help prevent overflow, foundation damage, and other costly water-related issues.</p>
+                        <p class="mb-50">Our experienced team uses professional equipment and safety measures to clean and inspect your entire gutter system, ensuring it functions properly to protect your home year-round.</p>
 
                         <h2 class="sec-title page-title">Service Quality</h2>
-                        <p class="mb-30">Our carpenter cleaning services cover a wide range of wooden items, from antique furniture and doors to modern wooden installations. We employ specialized techniques to ensure deep cleaning and restoration while maintaining wood integrity.</p>
+                        <p class="mb-30">Our gutter cleaning services include complete debris removal, downspout clearing, and a thorough inspection of your gutter system. We ensure proper water flow and identify any potential issues that need attention.</p>
 
                         <div class="row mt-30 gx-40">
                             <div class="col-md-6">
                                 <div class="page-img">
-                                    <img class="w-100" src="assets/img/hero/hero.jpg" alt="Carpenter Cleaning Service">
+                                    <img class="w-100" src="assets/img/hero/hero.jpg" alt="Gutter Cleaning Service">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <p class="mb-4">Our expert team provides professional carpenter cleaning services tailored to your specific wood maintenance needs.</p>
+                                <p class="mb-4">Our expert team provides comprehensive gutter maintenance to protect your home's foundation and structure.</p>
                                 <div class="checklist body-color">
                                     <ul>
-                                        <li><i class="fa-solid fa-badge-check"></i>Wood-Safe Cleaning Products</li>
-                                        <li><i class="fa-solid fa-badge-check"></i>Professional Restoration Team</li>
-                                        <li><i class="fa-solid fa-badge-check"></i>Advanced Protection Methods</li>
-                                        <li><i class="fa-solid fa-badge-check"></i>Furniture & Floor Care</li>
-                                        <li><i class="fa-solid fa-badge-check"></i>Quality Assurance</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Complete Debris Removal</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Downspout Clearing</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>System Inspection</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Water Flow Testing</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Minor Repairs Available</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
-                        <h4 class="mb-20">Benefits of Carpenter Cleaning With IQ Cleaning</h4>
-                        <p class="mb-n2">Our carpenter cleaning services ensure your wooden furniture and surfaces remain in top condition, free from dirt, stains, and damage. We provide expert cleaning and restoration solutions that extend the life and beauty of wood structures.</p>
+                        <h4 class="mb-20">Benefits of Gutter Cleaning With IQ Cleaning</h4>
+                        <p class="mb-n2">Regular gutter cleaning prevents water damage to your home's foundation, walls, and landscaping. Our service helps maintain your home's structural integrity and prevents costly repairs from water-related issues.</p>
                         <div class="row mt-40 mb-35 gy-4 align-items-center">
                             <div class="col-md-6">
                                 <div class="page-img mb-0">
-                                    <img class="w-100" src="assets/img/hero/hero.jpg" alt="Carpenter Cleaning Benefits">
+                                    <img class="w-100" src="assets/img/hero/hero.jpg" alt="Gutter Cleaning Benefits">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="checklist style-2 mt-n1">
                                     <ul>
-                                        <li><i class="fa-solid fa-badge-check"></i>Deep Cleaning</li>
-                                        <li><i class="fa-solid fa-badge-check"></i>Surface Restoration</li>
-                                        <li><i class="fa-solid fa-badge-check"></i>Stain Removal</li>
-                                        <li><i class="fa-solid fa-badge-check"></i>UV & Moisture Protection</li>
-                                        <li><i class="fa-solid fa-badge-check"></i>Professional Handling</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Prevents Water Damage</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Protects Foundation</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Extends Gutter Life</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Prevents Pest Issues</li>
+                                        <li><i class="fa-solid fa-badge-check"></i>Maintains Home Value</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
-                        <p class="mb-0">Choose IQ Cleaning for professional carpenter cleaning services that ensure the preservation and restoration of your wooden surfaces. Contact us today to learn more about our expert wood cleaning solutions.</p>
+                        <p class="mb-0">Choose IQ Cleaning for professional gutter cleaning services that protect your home from water damage. Contact us today to schedule your gutter maintenance and ensure your drainage system works effectively.</p>
                     </div>
                     <div class="container mt-6 py-5 text-center">
-                        <h3 class=" mt-4">Bringing Sparkle to Every Corner</h2>
-                        <p class="fs-4 text-muted mb-5">Our professional cleaning services ensure a spotless, hygienic, and fresh environment for your home or office. Trust us to make your space shine!</p>
+                        <h3 class="mt-4">Protecting Your Home From Top to Bottom</h3>
+                        <p class="fs-4 text-muted mb-5">Our professional gutter cleaning services ensure proper water drainage and protect your home's foundation. Trust us to keep your gutters flowing freely!</p>
                         <a href="#" class="btn btn-lg px-5 bg-black text-white py-3 rounded-pill shadow-lg">Book Now</a>
                     </div>
-                    <div class="">
-                        <div>
-                            <span class="sub-title after-none">FAQS</span>
-                            <h4 class="">Have Any Questions About Carpet Cleaning?</h4>
-                        </div>
-                        <div class="accordion" id="faqAccordion">
-                            <!-- FAQ 1 -->
-                            <div class="accordion-card">
-                                <div class="accordion-header" id="collapse-item-3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">What is included in a carpet cleaning service?</button>
-                                </div>
-                                <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <p class="faq-text">Our carpet cleaning service includes deep cleaning to remove dirt, stains, and allergens using eco-friendly cleaning solutions. We use specialized equipment for thorough cleaning and drying, leaving your carpets fresh and spotless.</p>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- FAQ 2 -->
-                            <div class="accordion-card">
-                                <div class="accordion-header" id="collapse-item-4">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">Do you provide your own carpet cleaning equipment and supplies?</button>
-                                </div>
-                                <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="collapse-item-4" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <p class="faq-text">Yes, we bring all the necessary equipment and eco-friendly cleaning supplies to provide a deep and effective cleaning service for your carpets. Our team is fully equipped to handle different types of carpets and stains.</p>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- FAQ 3 -->
-                            <div class="accordion-card">
-                                <div class="accordion-header" id="collapse-item-5">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">How do I prepare my carpet for cleaning?</button>
-                                </div>
-                                <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="collapse-item-5" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <p class="faq-text">Before we arrive, it’s helpful to remove any furniture or objects from the carpeted areas. If you’re unable to do so, don’t worry—we can assist with moving lightweight items. We recommend vacuuming the carpet prior to the cleaning for optimal results.</p>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- FAQ 4 -->
-                            <div class="accordion-card">
-                                <div class="accordion-header" id="collapse-item-6">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">What should I do if I am not satisfied with the carpet cleaning service?</button>
-                                </div>
-                                <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="collapse-item-6" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <p class="faq-text">If you are not completely satisfied with our carpet cleaning service, please let us know, and we will do everything we can to address the issue. Our goal is to provide you with the best possible cleaning experience and ensure your complete satisfaction.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
             <div class="col-xxl-4 col-lg-4">
@@ -394,58 +290,35 @@
                     <div class="widget widget_search">
                         <h3 class="widget_title">Let's Get Started</h3>
                         <div class="download-widget-wrap">
-                            <a href="service-details.html" class="th-btn bg-black"></i>Book Now !</a>
+                            <a href="service-details.html" class="th-btn bg-black">Book Now!</a>
                         </div>
                     </div>
                     <div class="widget widget_categories">
                         <h3 class="widget_title">Categories</h3>
                         <ul>
-                            <li><a href="MoveInOutCleaning.html">Move In/Out Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="ShortTermRentalCleaning.html">Short Term Rental Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="CarpetCleaning.html">Carpet Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="SpecialProjects.html">Special Projects</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
-                            <li><a href="PostConstruction.html">Post Construction</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="RoofCleaning.html">Roof Cleaning</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="WindowCleaning.html">Window Washing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="SurfaceWashing.html">Surface Washing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="HouseWashing.html">House Washing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="Gutter.html">Gutter</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
+                            <li><a href="PaverSealing.html">Paver Sealing</a><span><i class="fa-sharp fa-light fa-arrow-right"></i></span></li>
                         </ul>
                     </div>
-                    <div class="widget widget_download">
-                        <h4 class="widget_title">Download</h4>
-                        <div class="download-widget-wrap">
-                            <a href="service.html" class="th-btn bg-black"><i class="fa-light fa-file-pdf me-2"></i>DOWNLOAD PDF</a>
-                            <a href="service.html" class="th-btn style4"><i class="fa-light fa-file-lines me-2"></i>DOWNLOAD DOC</a>
-                        </div>
-                    </div>
-                    <div class="widget widget_quote">
-                        <h3 class="widget_title">Have any Question</h3>
-                        <form action="mail.php" method="POST" class="widget-form form-rounded-30">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
-                                <i class="fal fa-user"></i>
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea>
-                                <i class="fal fa-comment"></i>
-                            </div>
-                            <div class="form-btn">
-                                <button class="th-btn w-100 bg-black">Ask Question Now</button>
-                            </div>
-                            <p class="form-messages mb-0 mt-3"></p>
-                        </form>
-                    </div>
-
+                    
                     <div class="">
                         <div>
                             <span class="sub-title after-none">FAQS</span>
-                            <h4 class="">Have Any Questions About Carpet Cleaning?</h4>
+                            <h4 class="">Have Any Questions About Our Gutter Cleaning Services?</h4>
                         </div>
                         <div class="accordion" id="faqAccordion">
                             <!-- FAQ 1 -->
                             <div class="accordion-card">
                                 <div class="accordion-header" id="collapse-item-3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">What is included in a carpet cleaning service?</button>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">What does gutter cleaning include?</button>
                                 </div>
                                 <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p class="faq-text">Our carpet cleaning service includes deep cleaning to remove dirt, stains, and allergens using eco-friendly cleaning solutions. We use specialized equipment for thorough cleaning and drying, leaving your carpets fresh and spotless.</p>
+                                        <p class="faq-text">Our gutter cleaning service includes removing all debris from gutters and downspouts, flushing the system to ensure proper water flow, checking for proper drainage, and inspecting for any damage or potential issues that may need attention.</p>
                                     </div>
                                 </div>
                             </div>
@@ -453,11 +326,11 @@
                             <!-- FAQ 2 -->
                             <div class="accordion-card">
                                 <div class="accordion-header" id="collapse-item-4">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">Do you provide your own carpet cleaning equipment and supplies?</button>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">How often should gutters be cleaned?</button>
                                 </div>
                                 <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="collapse-item-4" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p class="faq-text">Yes, we bring all the necessary equipment and eco-friendly cleaning supplies to provide a deep and effective cleaning service for your carpets. Our team is fully equipped to handle different types of carpets and stains.</p>
+                                        <p class="faq-text">We recommend cleaning gutters at least twice a year - typically in spring and fall. However, homes with many trees nearby may need more frequent cleaning. Regular maintenance prevents clogs and ensures proper water drainage.</p>
                                     </div>
                                 </div>
                             </div>
@@ -465,11 +338,11 @@
                             <!-- FAQ 3 -->
                             <div class="accordion-card">
                                 <div class="accordion-header" id="collapse-item-5">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">How do I prepare my carpet for cleaning?</button>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">What happens if I don't clean my gutters?</button>
                                 </div>
                                 <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="collapse-item-5" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p class="faq-text">Before we arrive, it’s helpful to remove any furniture or objects from the carpeted areas. If you’re unable to do so, don’t worry—we can assist with moving lightweight items. We recommend vacuuming the carpet prior to the cleaning for optimal results.</p>
+                                        <p class="faq-text">Neglected gutters can lead to serious problems including water damage to your foundation, basement flooding, fascia rot, landscape erosion, and ice dams in winter. Regular cleaning helps prevent these costly issues.</p>
                                     </div>
                                 </div>
                             </div>
@@ -477,20 +350,30 @@
                             <!-- FAQ 4 -->
                             <div class="accordion-card">
                                 <div class="accordion-header" id="collapse-item-6">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">What should I do if I am not satisfied with the carpet cleaning service?</button>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">How long does gutter cleaning take?</button>
                                 </div>
                                 <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="collapse-item-6" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p class="faq-text">If you are not completely satisfied with our carpet cleaning service, please let us know, and we will do everything we can to address the issue. Our goal is to provide you with the best possible cleaning experience and ensure your complete satisfaction.</p>
+                                        <p class="faq-text">The time needed depends on your home's size and gutter condition. A typical single-story home usually takes 1-2 hours, while larger homes or those with significant debris may take longer. We'll provide a time estimate during our initial assessment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- FAQ 5 -->
+                            <div class="accordion-card">
+                                <div class="accordion-header" id="collapse-item-7">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">Do you install gutter guards?</button>
+                                </div>
+                                <div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="collapse-item-7" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="faq-text">Yes, we offer gutter guard installation services. While gutter guards don't eliminate the need for cleaning entirely, they significantly reduce cleaning frequency and help prevent major clogs. We can discuss options during our service visit.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                 </aside>
             </div>
-
         </div>
     </div>
 </section>
@@ -606,6 +489,7 @@
         </div>
     </div>
 </div>
+
     <!--==============================
 	Footer Area
 ==============================-->
@@ -732,7 +616,6 @@
         </div>
     </div>
 </footer>
-
 <!--********************************
         Code End  Here 
 ******************************** -->
@@ -749,11 +632,6 @@
 
 <script src="assets/js/animation.js"></script>
 <script src="assets/js/nav.js"></script>
-    <!--==============================
-    All Js File
-============================== -->
-    <!-- Jquery -->
-     <script src="assets/js/animation.js"></script>
     <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
     <!-- Swiper Js -->
     <script src="assets/js/swiper-bundle.min.js"></script>
