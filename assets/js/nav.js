@@ -160,3 +160,130 @@ function initCarousel() {
 }
 
 document.addEventListener('DOMContentLoaded', initCarousel);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.carousel');
+    const cards = document.querySelectorAll('.carousel-card');
+    const prevArrow = document.querySelector('.carousel-arrow.prev');
+    const nextArrow = document.querySelector('.carousel-arrow.next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    
+    let currentIndex = 0;
+    let cardWidth;
+    let visibleCards;
+    let totalSlides;
+    
+    // Initialize dots
+    function initDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    // Calculate dimensions based on viewport
+    function calculateDimensions() {
+        const containerWidth = carousel.parentElement.clientWidth;
+        if (window.innerWidth >= 992) {
+            visibleCards = 3;
+        } else if (window.innerWidth >= 768) {
+            visibleCards = 2;
+        } else {
+            visibleCards = 1;
+        }
+        
+        cardWidth = containerWidth / visibleCards;
+        
+        // Set card widths
+        cards.forEach(card => {
+            card.style.width = `${cardWidth}px`;
+            card.style.minWidth = `${cardWidth}px`;
+        });
+        
+        totalSlides = Math.ceil(cards.length - visibleCards) + 1;
+        
+        // Reinitialize dots when dimensions change
+        initDots();
+        
+        // Reset to first slide
+        currentIndex = 0;
+        updateCarousel();
+    }
+    
+    // Update carousel position
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        
+        // Update active dot
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Enable/disable arrows
+        prevArrow.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextArrow.style.opacity = currentIndex === totalSlides - 1 ? '0.5' : '1';
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+    
+    // Event listeners for arrows
+    prevArrow.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    nextArrow.addEventListener('click', () => {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    // Initialize
+    calculateDimensions();
+    
+    // Handle window resize
+    window.addEventListener('resize', calculateDimensions);
+    
+    // Touch events for mobile swiping
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    carousel.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+    }
+});
