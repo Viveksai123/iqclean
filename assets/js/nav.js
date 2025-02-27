@@ -116,6 +116,12 @@ const services = [
 const slider = document.getElementById('popularServicesSlider');
 const progressBar = document.getElementById('popularProgressBar');
 let currentIndex = 0;
+let autoSlideInterval;
+let isDragging = false;
+let startPosition = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID = 0;
 
 function createServiceCards() {
     services.forEach((service, index) => {
@@ -137,7 +143,217 @@ function createServiceCards() {
         `;
         slider.appendChild(card);
     });
+    
+    // Create navigation controls
+    createNavigation();
+    
+    // Setup mouse/touch events
+    setupDragEvents();
+    
+    // Start auto-sliding
+    startAutoSlide();
 }
+
+function createNavigation() {
+    // Create navigation container
+    const navContainer = document.createElement('div');
+    navContainer.className = 'popular-services-navigation';
+    
+    // Create previous button
+    const prevButton = document.createElement('button');
+    prevButton.className = 'popular-nav-button prev-button';
+    prevButton.innerHTML = `
+        
+    `;
+    prevButton.addEventListener('click', () => {
+        goToPrevSlide();
+        resetAutoSlide();
+    });
+    
+    // Create next button
+    const nextButton = document.createElement('button');
+    nextButton.className = 'popular-nav-button next-button';
+    nextButton.innerHTML = `
+       
+    `;
+    nextButton.addEventListener('click', () => {
+        goToNextSlide();
+        resetAutoSlide();
+    });
+    
+    // Add buttons to navigation container
+    navContainer.appendChild(prevButton);
+    navContainer.appendChild(nextButton);
+    
+    // Add navigation container to slider's parent
+    slider.parentNode.appendChild(navContainer);
+}
+
+function setupDragEvents() {
+    // Mouse Events
+    slider.addEventListener('mousedown', dragStart);
+    slider.addEventListener('mouseup', dragEnd);
+    slider.addEventListener('mouseleave', dragEnd);
+    slider.addEventListener('mousemove', drag);
+    
+    // Touch Events
+    slider.addEventListener('touchstart', dragStart);
+    slider.addEventListener('touchend', dragEnd);
+    slider.addEventListener('touchmove', drag);
+    
+    // Prevent context menu on right click
+    slider.addEventListener('contextmenu', e => e.preventDefault());
+    
+    // Add grab cursor style
+    slider.style.cursor = 'grab';
+}
+
+function dragStart(e) {
+    clearInterval(autoSlideInterval);
+    
+    // Get start position
+    startPosition = getPositionX(e);
+    isDragging = true;
+    
+    // Change cursor style
+    slider.style.cursor = 'grabbing';
+    
+    // Start animation
+    animationID = requestAnimationFrame(animation);
+}
+
+function drag(e) {
+    if (isDragging) {
+        const currentPosition = getPositionX(e);
+        currentTranslate = prevTranslate + currentPosition - startPosition;
+    }
+}
+
+function dragEnd() {
+    cancelAnimationFrame(animationID);
+    isDragging = false;
+    
+    // Reset cursor style
+    slider.style.cursor = 'grab';
+    
+    // Calculate how much the slider was moved
+    const cardWidth = slider.querySelector('.popular-service-card').offsetWidth;
+    const gap = parseInt(window.getComputedStyle(slider).columnGap || 0);
+    const moveThreshold = (cardWidth + gap) * 0.2; // 20% threshold
+    const draggedDistance = currentTranslate - prevTranslate;
+    
+    if (draggedDistance < -moveThreshold) {
+        // Dragged left (next slide)
+        goToNextSlide();
+    } else if (draggedDistance > moveThreshold) {
+        // Dragged right (previous slide)
+        goToPrevSlide();
+    } else {
+        // Return to current slide
+        updateSliderPosition();
+    }
+    
+    // Restart auto sliding
+    startAutoSlide();
+}
+
+function animation() {
+    setSliderPosition();
+    if (isDragging) requestAnimationFrame(animation);
+}
+
+function getPositionX(e) {
+    return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+}
+
+function setSliderPosition() {
+    slider.style.transform = `translateX(${currentTranslate}px)`;
+}
+
+function updateSliderPosition() {
+    const cardWidth = slider.querySelector('.popular-service-card').offsetWidth;
+    const gap = parseInt(window.getComputedStyle(slider).columnGap || 0);
+    
+    currentTranslate = -currentIndex * (cardWidth + gap);
+    prevTranslate = currentTranslate;
+    
+    setSliderPosition();
+    
+    // Update progress bar
+    if (progressBar) {
+        const totalCards = services.length;
+        const progress = ((currentIndex + 1) / totalCards) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+}
+
+function goToNextSlide() {
+    const totalCards = services.length;
+    const visibleCards = getVisibleCardsCount();
+    
+    if (currentIndex < totalCards - visibleCards) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Loop back to start
+    }
+    
+    updateSliderPosition();
+}
+
+function goToPrevSlide() {
+    const totalCards = services.length;
+    
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalCards - getVisibleCardsCount(); // Loop to end
+    }
+    
+    updateSliderPosition();
+}
+
+function getVisibleCardsCount() {
+    // Calculate how many cards are visible based on container width
+    const containerWidth = slider.parentElement.offsetWidth;
+    const cardWidth = slider.querySelector('.popular-service-card').offsetWidth;
+    const gap = parseInt(window.getComputedStyle(slider).columnGap || 0);
+    
+    return Math.max(1, Math.floor(containerWidth / (cardWidth + gap)));
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(goToNextSlide, 5000); // Change slide every 5 seconds
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+// Initialize
+function initPopularServices() {
+    createServiceCards();
+    updateSliderPosition();
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            goToPrevSlide();
+            resetAutoSlide();
+        } else if (e.key === 'ArrowRight') {
+            goToNextSlide();
+            resetAutoSlide();
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        updateSliderPosition();
+    });
+}
+
+// Call initialization when the DOM is loaded
+document.addEventListener('DOMContentLoaded', initPopularServices);
 
 function updateProgress() {
     const progress = (currentIndex / (services.length - 3)) * 100;
