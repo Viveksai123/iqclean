@@ -6362,7 +6362,7 @@ ol.wp-block-rss {
 }
 
 .footer-wrapper .th-social a {
-  background-color: #1F2432;
+  background-color: #1E1E1E;
   color: var(--white-color);
 }
 
@@ -6836,7 +6836,7 @@ ol.wp-block-rss {
 .footer-wrapper .footer-bottom-shape {
   height: 120px;
   width: 100%;
-  background: var(--theme-color2);
+  background: #1E1E1E;
   position: absolute;
   z-index: -1;
   bottom: 0;
@@ -24050,4 +24050,8 @@ body {
   .iqhc-stats-card {
     min-width: auto;
   }
+}
+
+.bgblack{
+  background-color: #1E1E1E !important;
 }
