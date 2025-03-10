@@ -74,45 +74,7 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(counter);
 
-const services = [
-    {
-        title: "Permanent Lighting",
-        description: "Illuminate your home year-round with beautiful, low-maintenance lighting that fits every occasion."
-    },
-    {
-        title: "Move In/Out Cleaning",
-        description: "Make your move stress-free with a deep, detailed clean before or after your big day."
-    },
-    {
-        title: "House Wash",
-        description: "Refresh your home's exterior with a gentle, thorough wash that restores its original charm."
-    },
-    {
-        title: "Window Cleaning",
-        description: "Enjoy crystal-clear views with streak-free, professionally cleaned windows inside and out."
-    },
-    {
-        title: "Holiday Lighting",
-        description: "Celebrate with ease—let us design, install, and remove stunning holiday lighting for you."
-    },
-    {
-        title: "Recurring Home Cleaning",
-        description: "Keep your interior effortlessly clean with flexible, routine cleanings tailored to your needs."
-    },
-    {
-        title: "Pressure Washing",
-        description: "Erase dirt, grime, and stains from surfaces with powerful yet safe pressure washing."
-    },
-    {
-        title: "Paver Sealing",
-        description: "Protect and enhance your pavers with professional sealing for a polished, long-standing finish."
-    },
-    {
-        title: "Landscape & Patio Lighting",
-        description: "Add ambiance and security to your outdoor spaces with custom-designed lighting solutions."
-    }
-];
-
+// Initialize variables
 const slider = document.getElementById('popularServicesSlider');
 const progressBar = document.getElementById('popularProgressBar');
 let currentIndex = 0;
@@ -122,43 +84,6 @@ let startX = 0;
 let currentX = 0;
 let walk = 0;
 let sliderPosition = 0;
-
-function createServiceCards() {
-    slider.innerHTML = ''; // Clear existing content to prevent duplicates
-    
-    // Remove the window icon element if it exists
-    const windowIcon = document.querySelector('.window-icon');
-    if (windowIcon) {
-        windowIcon.style.display = 'none';
-    }
-    
-    services.forEach((service, index) => {
-        const card = document.createElement('div');
-        card.className = 'popular-service-card';
-        
-        card.innerHTML = `
-            <div class="popular-service-image">
-                <span class="popular-service-image-text">Service-specific Image</span>
-            </div>
-            <div class="popular-service-content">
-                <h3 class="popular-service-title">${service.title}</h3>
-                <p class="popular-service-description">${service.description}</p>
-                <div class="popular-service-arrow">
-                    <svg class="popular-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
-        `;
-        slider.appendChild(card);
-    });
-    
-    // Setup drag functionality
-    setupDragEvents();
-    
-    // Start auto-sliding
-    startAutoSlide();
-}
 
 function setupDragEvents() {
     // Add CSS to slider to ensure it can be dragged
@@ -216,11 +141,15 @@ function dragEnd() {
     const gap = getGapWidth();
     const totalWidth = cardWidth + gap;
     
+    // Count total cards
+    const cards = slider.querySelectorAll('.popular-service-card');
+    const totalCards = cards.length;
+    
     // Determine slide change based on drag distance
     if (Math.abs(walk) > totalWidth * 0.2) { // 20% threshold to change slide
         if (walk < 0) {
             // Dragged left - go to next slide
-            currentIndex = Math.min(currentIndex + 1, services.length - getVisibleCardsCount());
+            currentIndex = Math.min(currentIndex + 1, totalCards - getVisibleCardsCount());
         } else {
             // Dragged right - go to previous slide
             currentIndex = Math.max(currentIndex - 1, 0);
@@ -279,14 +208,16 @@ function updateSliderPosition() {
     
     // Update progress bar
     if (progressBar) {
-        const totalCards = services.length;
+        const cards = slider.querySelectorAll('.popular-service-card');
+        const totalCards = cards.length;
         const progress = ((currentIndex + 1) / totalCards) * 100;
         progressBar.style.width = `${progress}%`;
     }
 }
 
 function goToNextSlide() {
-    const totalCards = services.length;
+    const cards = slider.querySelectorAll('.popular-service-card');
+    const totalCards = cards.length;
     const visibleCards = getVisibleCardsCount();
     
     if (currentIndex < totalCards - visibleCards) {
@@ -299,7 +230,8 @@ function goToNextSlide() {
 }
 
 function goToPrevSlide() {
-    const totalCards = services.length;
+    const cards = slider.querySelectorAll('.popular-service-card');
+    const totalCards = cards.length;
     
     if (currentIndex > 0) {
         currentIndex--;
@@ -325,8 +257,9 @@ function calculateResponsiveSettings() {
     
     // Reset current index when screen size changes drastically
     // This prevents the slider from showing empty space on resize
+    const cards = slider.querySelectorAll('.popular-service-card');
     if (currentIndex > 0) {
-        const maxVisibleIndex = services.length - getVisibleCardsCount();
+        const maxVisibleIndex = cards.length - getVisibleCardsCount();
         if (currentIndex > maxVisibleIndex) {
             currentIndex = Math.max(0, maxVisibleIndex);
         }
@@ -340,9 +273,16 @@ function startAutoSlide() {
     autoSlideInterval = setInterval(goToNextSlide, 5000); // Change slide every 5 seconds
 }
 
-// Initialize
-function initPopularServices() {
-    createServiceCards();
+// MAIN INITIALIZATION
+document.addEventListener('DOMContentLoaded', () => {
+    // Remove the window icon element if it exists
+    const windowIcon = document.querySelector('.window-icon');
+    if (windowIcon) {
+        windowIcon.style.display = 'none';
+    }
+    
+    // Setup drag functionality
+    setupDragEvents();
     
     // Add keyboard navigation
     document.addEventListener('keydown', (e) => {
@@ -368,12 +308,9 @@ function initPopularServices() {
     
     // Initial position
     updateSliderPosition();
-}
-
-// MAIN INITIALIZATION
-document.addEventListener('DOMContentLoaded', () => {
-    // Only initialize the popular services slider
-    initPopularServices();
+    
+    // Start auto-sliding
+    startAutoSlide();
     
     // Add CSS to hide window icon element and navigation buttons
     const style = document.createElement('style');
@@ -404,6 +341,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         /* Prevent image dragging in cards */
         .popular-service-image img {
+            pointer-events: none;
+        }
+        
+        /* Make sure arrow image doesn't get dragged */
+        .popular-arrow-icon {
             pointer-events: none;
         }
         

@@ -24055,3 +24055,26 @@ body {
 .bgblack{
   background-color: #1E1E1E !important;
 }
+
+/* Fix for service card images to respect container border radius */
+.popular-service-image {
+    overflow: hidden;
+    border-top-left-radius: 10px;  /* Match this to your card's border radius */
+    border-top-right-radius: 10px; /* Match this to your card's border radius */
+}
+
+.popular-service-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Simple fix for gallery images to fit their containers */
+.gallery-img img {
+  width: 100%;
+  height: 270px; /* Fixed height for all images */
+  object-fit: cover;
+  display: block;
+}
