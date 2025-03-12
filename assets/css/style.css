@@ -19545,9 +19545,9 @@ padding: 10px;
   background-color: rgba(22, 25, 33, 0.6);
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
   visibility: hidden;
   opacity: 0;
 }
@@ -22189,16 +22189,18 @@ textarea::-webkit-scrollbar-track {
 }
 
 .about-text {
-  font-family: 'Kalam', cursive;
+
   font-style: italic;
   font-size: 16px;
     color: #8B8B8B !important;
   line-height: 1.4;
   margin-bottom: 20px;
 }
+
 .contact-header {
   font-family: 'Kalam', cursive;
 }
+
 .social-icons1 {
   display: flex;
   gap: 10px; /* Adjust spacing between icons */
@@ -24071,10 +24073,101 @@ body {
 }
 
 
-/* Simple fix for gallery images to fit their containers */
+/* Base gallery card styles */
+.gallery-card2 {
+  width: 410px !important;
+  height: 370px !important; /* Default height */
+  overflow: hidden !important;
+  position: relative !important;
+  margin: 0 auto !important; /* Center the cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease !important;
+  background: transparent !important; /* Remove any background */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Gallery image container */
+.gallery-img {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Images inside gallery */
 .gallery-img img {
-  width: 100%;
-  height: 270px; /* Fixed height for all images */
-  object-fit: cover;
-  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.3s ease, border-radius 0.3s ease !important;
+}
+
+/* Specific size variations */
+.gallery-card2.size-460 {
+  height: 460px !important; /* For the 410×460 card */
+}
+
+.gallery-card2.size-280 {
+  height: 280px !important; /* For the 410×280 card */
+}
+
+/* Hover effect - Pop out slightly with border radius */
+.gallery-card2:hover {
+  transform: scale(1.05) !important; /* Slight scale up */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important; /* Add shadow for depth */
+  z-index: 5 !important; /* Ensure it appears above other cards */
+  border-radius: 12px !important; /* Add rounded corners on hover */
+  background: transparent !important; /* Ensure no background */
+}
+
+/* Add border radius to the image on hover as well */
+.gallery-card2:hover .gallery-img img {
+  border-radius: 12px !important;
+}
+
+/* Remove any existing backgrounds and overlays */
+.gallery-card2, 
+.gallery-img, 
+.gallery-img::before, 
+.gallery-img::after {
+  background: transparent !important;
+}
+
+/* Center the gallery row items */
+.gallery-row {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+/* Optional: responsive adjustments */
+@media (max-width: 767px) {
+  .gallery-card2 {
+    width: 100% !important;
+    height: 300px !important;
+  }
+  
+  .gallery-card2.size-460 {
+    height: 360px !important;
+  }
+  
+  .gallery-card2.size-280 {
+    height: 240px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #clean-home-heading {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  #clean-home-heading {
+    font-size: 3rem !important;
+  }
 }
