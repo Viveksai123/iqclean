@@ -24197,7 +24197,7 @@ body {
 .cta-contact-section {
   width: 50%;
   padding: 10px; /* Reduced padding */
-  background-color: #f2f2f2;
+  background-color: #FF6F3C;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24206,7 +24206,7 @@ body {
 .cta-phone-section {
   width: 50%;
   padding: 10px; /* Reduced padding */
-  background-color: #FF6F3C;
+  background-color: #1E1E1E;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24215,7 +24215,7 @@ body {
 .cta-contact-label {
   font-size: 14px; /* Smaller font */
   font-weight: 500;
-  color: #333;
+  color: #fff;
 }
 
 .cta-phone-number {
