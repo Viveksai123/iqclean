@@ -23593,6 +23593,7 @@ body {
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: bold;
+  margin-left: -10px;
 }
 
 .badge-text {
