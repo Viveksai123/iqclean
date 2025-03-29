@@ -24237,3 +24237,213 @@ body {
       display: none;
   }
 }
+
+/* Reset and base styles */
+
+
+/* Main container styles */
+.iq-main-container {
+  background-color: #1E1E1E;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iq-text-light {
+  color: white;
+}
+
+.iq-full-height {
+  min-height: 100vh;
+}
+
+.iq-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section styles */
+.iq-section {
+  container-fluid: true;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1.5rem;
+}
+
+.iq-flex-responsive {
+  flex-direction: column;
+}
+
+.iq-padding-standard {
+  padding: 1.5rem;
+}
+
+/* Text alignment */
+.iq-text-center-mobile {
+  text-align: center;
+}
+
+.iq-text-start {
+  text-align: left;
+}
+
+/* Content columns */
+.iq-content-left, .iq-content-right {
+  width: 100%;
+}
+
+.iq-content-left {
+  padding: 1rem;
+}
+
+/* Heading styles */
+.iq-heading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.iq-no-shadow {
+  text-shadow: none;
+}
+
+.iq-margin-bottom-medium {
+  margin-bottom: 1.5rem;
+}
+
+.iq-margin-bottom-small {
+  margin-bottom: 1rem;
+}
+
+/* Paragraph styles */
+.iq-paragraph {
+  font-size: 1rem;
+}
+
+/* List styles */
+.iq-list-unstyled {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.iq-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.iq-flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.iq-gap-small {
+  gap: 1rem;
+}
+
+/* Button styles */
+.iq-button {
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.iq-button:hover {
+  background-color: #ff5722;
+}
+
+.iq-font-weight-medium {
+  font-weight: 500;
+}
+
+.iq-shadow-large {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.iq-cta-button {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.iq-margin-top-small {
+  margin-top: 1rem;
+}
+
+/* Image styles */
+.iq-position-relative {
+  position: relative;
+}
+
+.iq-full-width {
+  width: 100%;
+}
+
+.iq-image-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.iq-rounded-medium {
+  border-radius: 0.5rem;
+}
+
+.iq-border-light {
+  border: 1px solid white;
+}
+
+.iq-margin-top-standard {
+  margin-top: 1.5rem;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+  .iq-flex-responsive {
+    flex-direction: row;
+  }
+  
+  .iq-text-start-desktop {
+    text-align: left;
+  }
+  
+  .iq-content-left, .iq-content-right {
+    width: 50%;
+  }
+  
+  .iq-margin-top-none-desktop {
+    margin-top: 0;
+  }
+}
+
+/* Fix for iOS background image zooming issue */
+@media only screen and (max-width: 767px) {
+  .th-hero-wrapper.hero-1 {
+    background-attachment: scroll !important; /* Prevents parallax-like effects */
+    -webkit-background-size: cover !important; /* Ensures proper sizing on iOS */
+    background-size: cover !important;
+    -webkit-transform: translateZ(0); /* Hardware acceleration */
+    transform: translateZ(0);
+    -webkit-perspective: 1000; /* Reduces chance of repainting */
+    perspective: 1000;
+    -webkit-backface-visibility: hidden; /* Prevents visual artifacts */
+    backface-visibility: hidden;
+  }
+  
+  /* Additional iOS-specific fixes */
+  @supports (-webkit-touch-callout: none) {
+    .th-hero-wrapper.hero-1 {
+      /* Disable any animations that might cause zoom */
+      animation: none !important;
+      transition: none !important;
+      /* Force the viewport to behave consistently */
+      height: 100% !important;
+      width: 100% !important;
+    }
+  }
+}
