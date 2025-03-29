@@ -24420,30 +24420,37 @@ body {
     margin-top: 0;
   }
 }
-
-/* Fix for iOS background image zooming issue */
+/* Fix for iOS background image zooming issue while maintaining fixed background */
 @media only screen and (max-width: 767px) {
   .th-hero-wrapper.hero-1 {
-    background-attachment: scroll !important; /* Prevents parallax-like effects */
-    -webkit-background-size: cover !important; /* Ensures proper sizing on iOS */
-    background-size: cover !important;
+    /* Maintain fixed background but prevent iOS-specific issues */
+    background-attachment: fixed; /* Keep the fixed effect */
+    -webkit-background-size: 100% auto !important; /* Control the scaling */
+    background-size: 100% auto !important;
     -webkit-transform: translateZ(0); /* Hardware acceleration */
     transform: translateZ(0);
-    -webkit-perspective: 1000; /* Reduces chance of repainting */
-    perspective: 1000;
-    -webkit-backface-visibility: hidden; /* Prevents visual artifacts */
-    backface-visibility: hidden;
   }
   
-  /* Additional iOS-specific fixes */
+  /* iOS-specific fixes */
   @supports (-webkit-touch-callout: none) {
     .th-hero-wrapper.hero-1 {
-      /* Disable any animations that might cause zoom */
-      animation: none !important;
-      transition: none !important;
-      /* Force the viewport to behave consistently */
-      height: 100% !important;
-      width: 100% !important;
+      /* iOS doesn't handle background-attachment: fixed well, so we use a workaround */
+      background-attachment: scroll; /* Use scroll on iOS specifically */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling */
+      /* Control the background position to mimic fixed effect */
+      background-position: center center;
+      /* Prevent any other scaling that might cause zoom */
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
+  }
+}
+
+/* For non-mobile views, ensure fixed background works properly */
+@media only screen and (min-width: 768px) {
+  .th-hero-wrapper.hero-1 {
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
   }
 }
