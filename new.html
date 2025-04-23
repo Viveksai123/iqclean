@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iQ Home Care - Popular Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: #333;
+            background-color: #fff;
+        }
+
+        .iqhc5_services_section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .iqhc5_services_container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .iqhc5_services_header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .iqhc5_services_subtitle {
+            color: #FF6F3C;
+            font-size: 16px;
+            font-weight: semi-bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .iqhc5_services_subtitle::before {
+            content: "";
+            width: 40px;
+            height: 2px;
+            background-color: #FF6F3C;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .iqhc5_services_title {
+            font-size: 36px;
+            font-weight: semi-bold;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #333;
+        }
+
+        /* Carousel Container */
+        .iqhc5_carousel_wrapper {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+
+        /* Carousel Track */
+        .iqhc5_carousel_track {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Carousel Items */
+        .iqhc5_service_card {
+            flex: 0 0 calc(25% - 15px);
+            min-width: calc(25% - 15px);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        @media (max-width: 1200px) {
+            .iqhc5_service_card {
+                flex: 0 0 calc(33.33% - 14px);
+                min-width: calc(33.33% - 14px);
+            }
+            
+            .iqhc5_services_title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .iqhc5_service_card {
+                flex: 0 0 calc(50% - 10px);
+                min-width: calc(50% - 10px);
+            }
+            
+            .iqhc5_services_header {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .iqhc5_service_card {
+                flex: 0 0 100%;
+                min-width: 100%;
+            }
+            
+            .iqhc5_services_title {
+                font-size: 24px;
+            }
+            
+            .iqhc5_services_section {
+                padding: 40px 0;
+            }
+        }
+
+        .iqhc5_service_card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .iqhc5_service_image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .iqhc5_service_image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .iqhc5_service_card:hover .iqhc5_service_image img {
+            transform: scale(1.05);
+        }
+
+        .iqhc5_service_content {
+            padding: 20px;
+        }
+
+        .iqhc5_service_title {
+            font-size: 18px;
+            font-weight: semi-bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .iqhc5_service_description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .iqhc5_service_arrow {
+            text-align: right;
+            color: #FF6F3C;
+            transition: transform 0.3s ease;
+        }
+
+        .iqhc5_arrow_icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .iqhc5_service_card:hover .iqhc5_service_arrow {
+            transform: translateX(5px);
+        }
+
+        /* Controls */
+        .iqhc5_carousel_controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        .iqhc5_progress_container {
+            width: 100%;
+            height: 4px;
+            background-color: #e5e5e5;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .iqhc5_progress_bar {
+            height: 100%;
+            background-color: #FF6F3C;
+            width: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .iqhc5_carousel_nav {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .iqhc5_nav_button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .iqhc5_nav_button:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .iqhc5_cta_button {
+            padding: 12px 24px;
+            background-color: #FF6F3C;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 350px;
+            text-align: center;
+        }
+
+        .iqhc5_cta_button:hover {
+            background-color: #e5623a;
+        }
+    </style>
+</head>
+<body>
+    <section class="iqhc5_services_section">
+        <div class="iqhc5_services_container">
+            <div class="iqhc5_services_header">
+                <p class="iqhc5_services_subtitle">POPULAR SERVICES</p>
+                <h2 class="iqhc5_services_title">The Services People Love, From a Team You Can Trust</h2>
+            </div>
+
+            <div class="iqhc5_carousel_wrapper">
+                <div class="iqhc5_carousel_track" id="iqhc5ServicesTrack">
+                    <!-- Window Cleaning -->
+                    <a href="WindowCleaning.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/windowcleaning.jpg" alt="Window Cleaning">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">Window Cleaning</h3>
+                            <p class="iqhc5_service_description">Enjoy crystal-clear views with streak-free, professionally cleaned windows inside and out.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Holiday Lighting -->
+                    <a href="SeasonalHoliday.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/holidylighting.webp" alt="Holiday Lighting">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">Holiday Lighting</h3>
+                            <p class="iqhc5_service_description">Celebrate with ease—let us design, install, and remove stunning holiday lighting for you.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Recurring Home Cleaning -->
+                    <a href="StandardCleaning.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/recurrtinghomecleaning.jpg" alt="Recurring Home Cleaning">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">Recurring Home Cleaning</h3>
+                            <p class="iqhc5_service_description">Keep your interior effortlessly clean with flexible, routine cleanings tailored to your needs.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Pressure Washing -->
+                    <a href="SurfaceWashing.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/pressurewash.png" alt="Pressure Washing">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">Pressure Washing</h3>
+                            <p class="iqhc5_service_description">Erase dirt, grime, and stains from surfaces with powerful yet safe pressure washing.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Permanent Lighting -->
+                    <a href="SeasonPermanent.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/pramenentlightinng.jpg" alt="Permanent Lighting">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">Permanent Lighting</h3>
+                            <p class="iqhc5_service_description">Illuminate your home year-round with beautiful, low-maintenance lighting that fits every occasion.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Move In/Out Cleaning -->
+                    <a href="MoveInOutCleaning.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/movein.png" alt="Move In/Out Cleaning">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">Move In/Out Cleaning</h3>
+                            <p class="iqhc5_service_description">Make your move stress-free with a deep, detailed clean before or after your big day.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- House Wash -->
+                    <a href="HouseWashing.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/housewash.png" alt="House Wash">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">House Wash</h3>
+                            <p class="iqhc5_service_description">Refresh your home's exterior with a gentle, thorough wash that restores its original charm.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Paver Sealing -->
+                    <a href="PaperSealing.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/pavercleaning.png" alt="Paver Sealing">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">Paver Sealing</h3>
+                            <p class="iqhc5_service_description">Protect and enhance your pavers with professional sealing for a polished, long-standing finish.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Landscape & Patio Lighting -->
+                    <a href="PatioLighting.html" class="iqhc5_service_card">
+                        <div class="iqhc5_service_image">
+                            <img src="assets/img/hero/Landscape_Patio.png" alt="Landscape & Patio Lighting">
+                        </div>
+                        <div class="iqhc5_service_content">
+                            <h3 class="iqhc5_service_title">Landscape & Patio Lighting</h3>
+                            <p class="iqhc5_service_description">Add ambiance and security to your outdoor spaces with custom-designed lighting solutions.</p>
+                            <div class="iqhc5_service_arrow">
+                                <svg class="iqhc5_arrow_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="iqhc5_carousel_controls">
+                <div class="iqhc5_progress_container">
+                    <div class="iqhc5_progress_bar" id="iqhc5ProgressBar"></div>
+                </div>
+                
+                <div class="iqhc5_carousel_nav">
+                    <button class="iqhc5_nav_button iqhc5_prev_btn" id="iqhc5PrevBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="iqhc5_nav_button iqhc5_next_btn" id="iqhc5NextBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <button class="iqhc5_cta_button">GET STARTED</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const track = document.getElementById('iqhc5ServicesTrack');
+            const progressBar = document.getElementById('iqhc5ProgressBar');
+            const prevBtn = document.getElementById('iqhc5PrevBtn');
+            const nextBtn = document.getElementById('iqhc5NextBtn');
+            
+            // Get all cards
+            const cards = track.querySelectorAll('.iqhc5_service_card');
+            const totalCards = cards.length;
+            
+            // Settings
+            const autoScrollDelay = 5000;
+            
+            // Variables
+            let currentIndex = 0;
+            let autoScrollInterval;
+            
+            // Init
+            initCarousel();
+            
+            // Event listeners
+            prevBtn.addEventListener('click', goToPrev);
+            nextBtn.addEventListener('click', goToNext);
+            window.addEventListener('resize', updateCarouselDisplay);
+            
+            // Initialize carousel
+            function initCarousel() {
+                updateCarouselDisplay();
+                setActiveCard(0);
+                startAutoScroll();
+            }
+            
+            // Update display based on screen size
+            function updateCarouselDisplay() {
+                // Reset transitions during resize
+                track.style.transition = 'none';
+                
+                // We always display the full available width
+                updateCardPositions();
+                
+                // After positioning, restore transition
+                setTimeout(() => {
+                    track.style.transition = 'transform 0.5s ease';
+                }, 50);
+            }
+            
+            // Go to previous slide
+            function goToPrev() {
+                stopAutoScroll();
+                
+                if (currentIndex <= 0) {
+                    setActiveCard(totalCards - 1);
+                } else {
+                    setActiveCard(currentIndex - 1);
+                }
+                
+                restartAutoScroll();
+            }
+            
+            // Go to next slide
+            function goToNext() {
+                stopAutoScroll();
+                
+                if (currentIndex >= totalCards - 1) {
+                    setActiveCard(0);
+                } else {
+                    setActiveCard(currentIndex + 1);
+                }
+                
+                restartAutoScroll();
+            }
+            
+            // Set active card
+            function setActiveCard(index) {
+                currentIndex = index;
+                updateCardPositions();
+                updateProgressBar();
+            }
+            
+            // Update positions of all cards
+            function updateCardPositions() {
+                // Calculate card width based on actual card
+                const card = cards[0];
+                const cardStyle = window.getComputedStyle(card);
+                const cardWidth = card.offsetWidth;
+                const cardMarginRight = parseInt(cardStyle.marginRight) || 20;
+                const totalCardWidth = cardWidth + cardMarginRight;
+                
+                // Set transform position
+                track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+            }
+            
+            // Update progress bar
+            function updateProgressBar() {
+                const percentage = (currentIndex / (totalCards - 1)) * 100;
+                progressBar.style.width = `${percentage}%`;
+            }
+            
+            // Auto-scroll functions
+            function startAutoScroll() {
+                autoScrollInterval = setInterval(goToNext, autoScrollDelay);
+            }
+            
+            function stopAutoScroll() {
+                clearInterval(autoScrollInterval);
+            }
+            
+            function restartAutoScroll() {
+                stopAutoScroll();
+                autoScrollInterval = setInterval(goToNext, autoScrollDelay);
+            }
+            
+            // Touch support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            track.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].clientX;
+                stopAutoScroll();
+            }, { passive: true });
+            
+            track.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+                restartAutoScroll();
+            }, { passive: true });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (diff > swipeThreshold) {
+                    // Swipe left - go next
+                    goToNext();
+                } else if (diff < -swipeThreshold) {
+                    // Swipe right - go prev
+                    goToPrev();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

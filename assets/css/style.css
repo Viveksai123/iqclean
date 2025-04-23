@@ -3766,7 +3766,7 @@ a.text-theme:hover,
 .widget_categories > ul > li:last-child > a,
 .wp-block-categories .menu > li:last-child > a,
 .wp-block-categories > ul > li:last-child > a {
-  border-bottom: none;
+  
   margin-bottom: 0;
 }
 
@@ -5137,7 +5137,7 @@ ol.wp-block-rss {
 .footer-widget .recent-post:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
-  border-bottom: 0;
+  
 }
 
 .footer-widget .recent-post .recent-post-meta a {
@@ -23292,7 +23292,7 @@ body {
   color: #333;
   position: relative;
   overflow: hidden;
-  height: 120vh;
+  height: 120%;
 }
 
 .section-header {
@@ -23346,7 +23346,7 @@ body {
   padding: 80px 0;
   background-color: transparent;
   overflow: hidden;
-  margin-top: -40vh;
+  margin-top: -15%;
   position: relative;
   z-index: 10;
 }
@@ -24203,6 +24203,15 @@ body {
   align-items: center;
 }
 
+.cta-contact-section1 {
+  width: 100%;
+  padding: 10px; /* Reduced padding */
+  background-color: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cta-phone-section {
   width: 50%;
   padding: 10px; /* Reduced padding */
@@ -24217,6 +24226,15 @@ body {
   font-weight: 500;
   color: #fff;
 }
+
+.cta-contact-label1 {
+  font-size: 20px; /* Smaller font */
+  font-weight: 500;
+  color: #fff;
+}
+
+
+
 
 .cta-phone-number {
   color: white;
@@ -24452,4 +24470,453 @@ section {
   display: flex;
   justify-content: center;
   width: 100%;
+} 
+
+.iqhc_about_top_section {
+  background-color: #1a1a1a;
+  padding: 2rem 0 4rem;
+}
+
+.iqhc_about_bottom_section {
+  background-color: #ffffff;
+  padding: 0;
+  color: #333;
+  position: relative;
+}
+
+.iqhc_about_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.iqhc_about_tagline {
+  color: #FF6F3C;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.iqhc_about_hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4%;
+  gap: 3rem;
+}
+
+.iqhc_about_hero_image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.iqhc_about_hero_image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.iqhc_about_hero_content {
+  flex: 1;
+  text-align: center;
+}
+
+.iqhc_about_hero_title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.iqhc_about_hero_text {
+  color: #bbbbbb;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.iqhc_about_mission {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #cccccc;
+}
+
+.iqhc_values_section1{
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  
+}
+
+.iqhc_values_header {
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.iqhc_values_title {
+  font-size: 2.5rem;
+  color: #FF6F3C;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.iqhc_values_grid_container {
+  background: linear-gradient(to bottom, #1a1a1a 40%, #ffffff 60%);
+  padding: 4rem 0;
+}
+
+.iqhc_values_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.iqhc_value_card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  color: #333;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.iqhc_value_icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 111, 60, 0.1);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iqhc_value_icon svg {
+  width: 30px;
+  height: 30px;
+  fill: #FF6F3C;
+}
+
+.iqhc_value_title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.iqhc_value_description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .iqhc_values_grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .iqhc_about_hero {
+      flex-direction: column;
+  }
+
+  .iqhc_about_hero_image,
+  .iqhc_about_hero_content {
+      max-width: 100%;
+      text-align: center;
+  }
+
+  .iqhc_about_tagline {
+      text-align: center;
+  }
+
+  .iqhc_about_hero_title {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .iqhc_values_grid {
+      grid-template-columns: 1fr;
+  }
+
+  .iqhc_about_hero_title {
+      font-size: 1.75rem;
+  }
+}
+
+
+
+.iqhc5_services_section {
+  padding: 80px 0;
+  position: relative;
+  overflow-x: hidden !important;
+}
+
+.iqhc5_services_container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.iqhc5_services_header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.iqhc5_services_subtitle {
+  color: #FF6F3C;
+  font-size: 16px;
+  font-weight: semi-bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iqhc5_services_subtitle::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-color: #FF6F3C;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.iqhc5_services_title {
+  font-size: 36px;
+  font-weight: semi-bold;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+/* Carousel Container */
+.iqhc5_carousel_wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+/* Carousel Track */
+.iqhc5_carousel_track {
+  display: flex;
+  gap: 20px;
+}
+
+/* Carousel Items */
+.iqhc5_service_card {
+  flex: 0 0 calc(25% - 15px);
+  min-width: calc(25% - 15px);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .iqhc5_service_card {
+      flex: 0 0 calc(33.33% - 14px);
+      min-width: calc(33.33% - 14px);
+  }
+  
+  .iqhc5_services_title {
+      font-size: 32px;
+  }
+}
+
+@media (max-width: 992px) {
+  .iqhc5_service_card {
+      flex: 0 0 calc(50% - 10px);
+      min-width: calc(50% - 10px);
+  }
+  
+  .iqhc5_services_header {
+      margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .iqhc5_service_card {
+      flex: 0 0 100%;
+      min-width: 100%;
+  }
+  
+  .iqhc5_services_title {
+      font-size: 24px;
+  }
+  
+  .iqhc5_services_section {
+      padding: 40px 0;
+  }
+}
+
+.iqhc5_service_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.iqhc5_service_image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.iqhc5_service_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.iqhc5_service_card:hover .iqhc5_service_image img {
+  transform: scale(1.05);
+}
+
+.iqhc5_service_content {
+  padding: 20px;
+}
+
+.iqhc5_service_title {
+  font-size: 18px;
+  font-weight: semi-bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.iqhc5_service_description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.iqhc5_service_arrow {
+  text-align: right;
+  color: #FF6F3C;
+  transition: transform 0.3s ease;
+}
+
+.iqhc5_arrow_icon {
+  width: 24px;
+  height: 24px;
+}
+
+.iqhc5_service_card:hover .iqhc5_service_arrow {
+  transform: translateX(5px);
+}
+
+/* Controls */
+.iqhc5_carousel_controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.iqhc5_progress_container {
+  width: 100%;
+  height: 4px;
+  background-color: #e5e5e5;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.iqhc5_progress_bar {
+  height: 100%;
+  background-color: #FF6F3C;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.iqhc5_carousel_nav {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+.iqhc5_nav_button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.iqhc5_nav_button:hover {
+  background-color: #f5f5f5;
+}
+
+.iqhc5_cta_button {
+  padding: 12px 24px;
+  background-color: #FF6F3C;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 350px;
+  text-align: center;
+}
+
+.iqhc5_cta_button:hover {
+  background-color: #e5623a;
+}
+
+
+/* Fix for iOS image zooming issue in tablet view */
+.th-hero-wrapper.hero-1 {
+  /* Prevents iOS from zooming in on background image */
+  background-attachment: scroll !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  /* The following property fixes a common iOS scaling issue */
+  -webkit-transform: translateZ(0);
+}
+
+/* Additional fix specifically for iPad and iOS tablets */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .th-hero-wrapper.hero-1 {
+      background-attachment: scroll !important;
+      background-size: cover !important;
+  }
+}
+
+/* If the above doesn't work, this alternative approach might help */
+.th-hero-wrapper.hero-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
