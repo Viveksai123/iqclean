@@ -40,7 +40,7 @@
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: start;
         }
 
         .iqhc5_services_subtitle::before {
@@ -55,9 +55,10 @@
         .iqhc5_services_title {
             font-size: 36px;
             font-weight: semi-bold;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
             color: #333;
+            text-align: left;
         }
 
         /* Carousel Container */
@@ -425,147 +426,236 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // DOM Elements
-            const track = document.getElementById('iqhc5ServicesTrack');
-            const progressBar = document.getElementById('iqhc5ProgressBar');
-            const prevBtn = document.getElementById('iqhc5PrevBtn');
-            const nextBtn = document.getElementById('iqhc5NextBtn');
-            
-            // Get all cards
-            const cards = track.querySelectorAll('.iqhc5_service_card');
-            const totalCards = cards.length;
-            
-            // Settings
-            const autoScrollDelay = 5000;
-            
-            // Variables
-            let currentIndex = 0;
-            let autoScrollInterval;
-            
-            // Init
-            initCarousel();
-            
-            // Event listeners
-            prevBtn.addEventListener('click', goToPrev);
-            nextBtn.addEventListener('click', goToNext);
-            window.addEventListener('resize', updateCarouselDisplay);
-            
-            // Initialize carousel
-            function initCarousel() {
-                updateCarouselDisplay();
-                setActiveCard(0);
-                startAutoScroll();
+    /**
+ * Infinite Carousel Script
+ * 
+ * Creates a smooth infinite carousel effect for WordPress
+ */
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        // DOM Elements
+        var track = document.getElementById('iqhc5ServicesTrack');
+        var progressBar = document.getElementById('iqhc5ProgressBar');
+        var prevBtn = document.getElementById('iqhc5PrevBtn');
+        var nextBtn = document.getElementById('iqhc5NextBtn');
+        
+        // Early exit if elements don't exist
+        if (!track || !progressBar || !prevBtn || !nextBtn) {
+            return;
+        }
+        
+        // Get all cards
+        var cards = track.querySelectorAll('.iqhc5_service_card');
+        var totalCards = cards.length;
+        
+        // Exit if no cards found
+        if (totalCards === 0) {
+            return;
+        }
+        
+        // Settings
+        var autoScrollDelay = 5000;
+        var transitionDuration = 300; // Reduced for smoother transitions
+        
+        // Variables
+        var currentIndex = 0;
+        var autoScrollInterval;
+        var isAnimating = false; // Prevent clicking during transitions
+        
+        // Clone first and last items for infinite effect
+        function setupInfiniteCarousel() {
+            // Clone the first few cards and add to the end
+            for (var i = 0; i < Math.min(3, totalCards); i++) {
+                var firstClone = cards[i].cloneNode(true);
+                firstClone.setAttribute('aria-hidden', 'true'); // For accessibility
+                track.appendChild(firstClone);
             }
             
-            // Update display based on screen size
-            function updateCarouselDisplay() {
-                // Reset transitions during resize
+            // Clone the last few cards and add to the beginning
+            for (var j = Math.max(0, totalCards - 3); j < totalCards; j++) {
+                var lastClone = cards[j].cloneNode(true);
+                lastClone.setAttribute('aria-hidden', 'true'); // For accessibility
+                track.prepend(lastClone);
+            }
+            
+            // Adjust initial position to show the original first card
+            currentIndex = Math.min(3, totalCards);
+            updateCardPositions(false);
+        }
+        
+        // Initialize carousel
+        function initCarousel() {
+            updateCarouselDisplay();
+            startAutoScroll();
+        }
+        
+        // Update display based on screen size
+        function updateCarouselDisplay() {
+            // Reset transitions during resize
+            track.style.transition = 'none';
+            
+            // We always display the full available width
+            updateCardPositions(false);
+            
+            // After positioning, restore transition
+            setTimeout(function() {
+                track.style.transition = 'transform ' + transitionDuration + 'ms ease';
+            }, 50);
+        }
+        
+        // Handle transition end to reset positions if needed
+        function handleTransitionEnd() {
+            // If we've moved to a clone, reposition
+            if (currentIndex < Math.min(3, totalCards)) {
                 track.style.transition = 'none';
+                currentIndex = totalCards + currentIndex;
+                updateCardPositions(false);
+            } else if (currentIndex >= totalCards + Math.min(3, totalCards)) {
+                track.style.transition = 'none';
+                currentIndex = currentIndex - totalCards;
+                updateCardPositions(false);
+            }
+            
+            // Re-enable transitions after repositioning
+            setTimeout(function() {
+                track.style.transition = 'transform ' + transitionDuration + 'ms ease';
+                isAnimating = false; // Animation is complete
+            }, 10);
+        }
+        
+        // Go to previous slide
+        function goToPrev() {
+            if (isAnimating) return; // Prevent multiple clicks during animation
+            isAnimating = true;
+            
+            stopAutoScroll();
+            currentIndex--;
+            updateCardPositions(true);
+            updateProgressBar();
+            restartAutoScroll();
+        }
+        
+        // Go to next slide
+        function goToNext() {
+            if (isAnimating) return; // Prevent multiple clicks during animation
+            isAnimating = true;
+            
+            stopAutoScroll();
+            currentIndex++;
+            updateCardPositions(true);
+            updateProgressBar();
+            restartAutoScroll();
+        }
+        
+        // Update positions of all cards
+        function updateCardPositions(animated) {
+            if (animated) {
+                track.style.transition = 'transform ' + transitionDuration + 'ms ease';
+            } else {
+                track.style.transition = 'none';
+            }
+            
+            // Calculate card width based on actual card
+            var allCards = track.querySelectorAll('.iqhc5_service_card');
+            var card = allCards[0];
+            var cardStyle = window.getComputedStyle(card);
+            var cardWidth = card.offsetWidth;
+            var cardMarginRight = parseInt(cardStyle.marginRight) || 20;
+            var totalCardWidth = cardWidth + cardMarginRight;
+            
+            // Set transform position
+            track.style.transform = 'translateX(-' + (currentIndex * totalCardWidth) + 'px)';
+        }
+        
+        // Update progress bar
+        function updateProgressBar() {
+            // Show progress based on the original card set position, not the clones
+            var progressIndex = currentIndex < Math.min(3, totalCards) ? 
+                totalCards - (Math.min(3, totalCards) - currentIndex) : 
+                (currentIndex - Math.min(3, totalCards)) % totalCards;
                 
-                // We always display the full available width
-                updateCardPositions();
-                
-                // After positioning, restore transition
-                setTimeout(() => {
-                    track.style.transition = 'transform 0.5s ease';
-                }, 50);
+            var percentage = (progressIndex / (totalCards - 1)) * 100;
+            progressBar.style.width = percentage + '%';
+        }
+        
+        // Auto-scroll functions
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(goToNext, autoScrollDelay);
+        }
+        
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+        
+        function restartAutoScroll() {
+            stopAutoScroll();
+            autoScrollInterval = setInterval(goToNext, autoScrollDelay);
+        }
+        
+        // Touch support for mobile
+        var touchStartX = 0;
+        var touchEndX = 0;
+        
+        function handleTouchStart(e) {
+            if (isAnimating) return; // Prevent touch during animation
+            
+            touchStartX = e.changedTouches[0].clientX;
+            stopAutoScroll();
+        }
+        
+        function handleTouchEnd(e) {
+            if (isAnimating) return; // Prevent touch during animation
+            
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+            restartAutoScroll();
+        }
+        
+        function handleSwipe() {
+            var swipeThreshold = 50;
+            var diff = touchStartX - touchEndX;
+            
+            if (diff > swipeThreshold) {
+                // Swipe left - go next
+                goToNext();
+            } else if (diff < -swipeThreshold) {
+                // Swipe right - go prev
+                goToPrev();
             }
-            
-            // Go to previous slide
-            function goToPrev() {
-                stopAutoScroll();
-                
-                if (currentIndex <= 0) {
-                    setActiveCard(totalCards - 1);
-                } else {
-                    setActiveCard(currentIndex - 1);
-                }
-                
-                restartAutoScroll();
-            }
-            
-            // Go to next slide
-            function goToNext() {
-                stopAutoScroll();
-                
-                if (currentIndex >= totalCards - 1) {
-                    setActiveCard(0);
-                } else {
-                    setActiveCard(currentIndex + 1);
-                }
-                
-                restartAutoScroll();
-            }
-            
-            // Set active card
-            function setActiveCard(index) {
-                currentIndex = index;
-                updateCardPositions();
-                updateProgressBar();
-            }
-            
-            // Update positions of all cards
-            function updateCardPositions() {
-                // Calculate card width based on actual card
-                const card = cards[0];
-                const cardStyle = window.getComputedStyle(card);
-                const cardWidth = card.offsetWidth;
-                const cardMarginRight = parseInt(cardStyle.marginRight) || 20;
-                const totalCardWidth = cardWidth + cardMarginRight;
-                
-                // Set transform position
-                track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
-            }
-            
-            // Update progress bar
-            function updateProgressBar() {
-                const percentage = (currentIndex / (totalCards - 1)) * 100;
-                progressBar.style.width = `${percentage}%`;
-            }
-            
-            // Auto-scroll functions
-            function startAutoScroll() {
-                autoScrollInterval = setInterval(goToNext, autoScrollDelay);
-            }
-            
-            function stopAutoScroll() {
-                clearInterval(autoScrollInterval);
-            }
-            
-            function restartAutoScroll() {
-                stopAutoScroll();
-                autoScrollInterval = setInterval(goToNext, autoScrollDelay);
-            }
-            
-            // Touch support for mobile
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            track.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].clientX;
-                stopAutoScroll();
-            }, { passive: true });
-            
-            track.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].clientX;
-                handleSwipe();
-                restartAutoScroll();
-            }, { passive: true });
-            
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                const diff = touchStartX - touchEndX;
-                
-                if (diff > swipeThreshold) {
-                    // Swipe left - go next
-                    goToNext();
-                } else if (diff < -swipeThreshold) {
-                    // Swipe right - go prev
+        }
+        
+        // Set up event listeners
+        function setupEventListeners() {
+            // Button click listeners with debounce
+            prevBtn.addEventListener('click', function() {
+                if (!isAnimating) {
                     goToPrev();
                 }
-            }
-        });
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                if (!isAnimating) {
+                    goToNext();
+                }
+            });
+            
+            // Window resize listener
+            window.addEventListener('resize', updateCarouselDisplay);
+            
+            // Transition end listener
+            track.addEventListener('transitionend', handleTransitionEnd);
+            
+            // Touch listeners for mobile
+            track.addEventListener('touchstart', handleTouchStart, { passive: true });
+            track.addEventListener('touchend', handleTouchEnd, { passive: true });
+        }
+        
+        // Initialize the carousel
+        setupInfiniteCarousel();
+        setupEventListeners();
+        initCarousel();
+    });
+})();
     </script>
 </body>
 </html>

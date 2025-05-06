@@ -605,9 +605,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('iqhc5PrevBtn');
     const nextBtn = document.getElementById('iqhc5NextBtn');
     
+    // Ensure we have the necessary elements
+    if (!track || !progressBar || !prevBtn || !nextBtn) {
+        console.error('Required carousel elements not found');
+        return;
+    }
+    
     // Get all cards
     const cards = track.querySelectorAll('.iqhc5_service_card');
     const totalCards = cards.length;
+    
+    if (totalCards === 0) {
+        console.error('No cards found in carousel');
+        return;
+    }
     
     // Settings
     const autoScrollDelay = 5000;
@@ -616,41 +627,83 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     let autoScrollInterval;
     
-    // Init
-    initCarousel();
-    
-    // Event listeners
-    prevBtn.addEventListener('click', goToPrev);
-    nextBtn.addEventListener('click', goToNext);
-    window.addEventListener('resize', updateCarouselDisplay);
-    
-    // Initialize carousel
+    // Initialize the carousel
     function initCarousel() {
-        updateCarouselDisplay();
-        setActiveCard(0);
-        startAutoScroll();
-    }
-    
-    // Update display based on screen size
-    function updateCarouselDisplay() {
-        // Reset transitions during resize
+        // Force the carousel to start at position 0
+        currentIndex = 0;
+        
+        // Force layout calculation before continuing
+        document.body.offsetHeight;
+        
+        // Reset any existing transform on the track
         track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
         
-        // We always display the full available width
-        updateCardPositions();
+        // Force browser to apply the transform immediately
+        track.offsetHeight;
         
-        // After positioning, restore transition
+        // Set the card width calculation and setup
+        calculateCardWidth();
+        
+        // Restore transition after initial positioning
         setTimeout(() => {
             track.style.transition = 'transform 0.5s ease';
         }, 50);
+        
+        // Initialize the progress bar
+        updateProgressBar();
+        
+        // Start auto-scrolling
+        startAutoScroll();
+    }
+    
+    // Calculate the number of visible cards based on screen width
+    function getVisibleCardsCount() {
+        const windowWidth = window.innerWidth;
+        
+        if (windowWidth <= 576) {
+            return 1; // Mobile: 1 card
+        } else if (windowWidth <= 992) {
+            return 2; // Tablet: 2 cards
+        } else if (windowWidth <= 1200) {
+            return 3; // Small desktop: 3 cards
+        } else {
+            return 4; // Large desktop: 4 cards
+        }
+    }
+    
+    // Calculate card width and gap
+    let cardWidth = 0;
+    let cardGap = 0;
+    
+    function calculateCardWidth() {
+        const card = cards[0];
+        const cardComputedStyle = window.getComputedStyle(card);
+        
+        // Get the actual measured width of the card
+        cardWidth = card.offsetWidth;
+        
+        // Try to get the gap - first look in the computed style
+        cardGap = parseFloat(cardComputedStyle.marginRight) || 0;
+        
+        // If no margin, try to get gap from the track element
+        if (cardGap === 0) {
+            const trackStyle = window.getComputedStyle(track);
+            cardGap = parseFloat(trackStyle.gap) || 20; // Default to 20px if no gap found
+        }
+        
+        return { width: cardWidth, gap: cardGap };
     }
     
     // Go to previous slide
     function goToPrev() {
         stopAutoScroll();
         
+        const visibleCards = getVisibleCardsCount();
+        const maxIndex = Math.max(0, totalCards - visibleCards);
+        
         if (currentIndex <= 0) {
-            setActiveCard(totalCards - 1);
+            setActiveCard(maxIndex);
         } else {
             setActiveCard(currentIndex - 1);
         }
@@ -662,7 +715,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function goToNext() {
         stopAutoScroll();
         
-        if (currentIndex >= totalCards - 1) {
+        const visibleCards = getVisibleCardsCount();
+        const maxIndex = Math.max(0, totalCards - visibleCards);
+        
+        if (currentIndex >= maxIndex) {
             setActiveCard(0);
         } else {
             setActiveCard(currentIndex + 1);
@@ -671,7 +727,7 @@ document.addEventListener('DOMContentLoaded', function() {
         restartAutoScroll();
     }
     
-    // Set active card
+    // Set active card and update display
     function setActiveCard(index) {
         currentIndex = index;
         updateCardPositions();
@@ -680,21 +736,53 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update positions of all cards
     function updateCardPositions() {
-        // Calculate card width based on actual card
-        const card = cards[0];
-        const cardStyle = window.getComputedStyle(card);
-        const cardWidth = card.offsetWidth;
-        const cardMarginRight = parseInt(cardStyle.marginRight) || 20;
-        const totalCardWidth = cardWidth + cardMarginRight;
+        // Get the latest card width measurements
+        const { width, gap } = calculateCardWidth();
         
-        // Set transform position
-        track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+        // Calculate the position to translate to
+        const translateX = -currentIndex * (width + gap);
+        
+        // Apply the transform
+        track.style.transform = `translateX(${translateX}px)`;
+    }
+    
+    // Handle window resize event
+    function handleResize() {
+        // Calculate new dimensions
+        calculateCardWidth();
+        
+        // Ensure current index is valid for new screen size
+        const visibleCards = getVisibleCardsCount();
+        const maxIndex = Math.max(0, totalCards - visibleCards);
+        
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+        
+        // Apply new positioning without animation
+        track.style.transition = 'none';
+        updateCardPositions();
+        
+        // Restore animation after reflow
+        setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease';
+        }, 50);
+        
+        // Update progress bar
+        updateProgressBar();
     }
     
     // Update progress bar
     function updateProgressBar() {
-        const percentage = (currentIndex / (totalCards - 1)) * 100;
-        progressBar.style.width = `${percentage}%`;
+        const visibleCards = getVisibleCardsCount();
+        const maxIndex = Math.max(0, totalCards - visibleCards);
+        
+        if (maxIndex > 0) {
+            const percentage = (currentIndex / maxIndex) * 100;
+            progressBar.style.width = `${percentage}%`;
+        } else {
+            progressBar.style.width = '100%';
+        }
     }
     
     // Auto-scroll functions
@@ -712,30 +800,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Touch support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    track.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].clientX;
-        stopAutoScroll();
-    }, { passive: true });
-    
-    track.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].clientX;
-        handleSwipe();
-        restartAutoScroll();
-    }, { passive: true });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
+    function setupTouchSupport() {
+        let touchStartX = 0;
+        let touchEndX = 0;
         
-        if (diff > swipeThreshold) {
-            // Swipe left - go next
-            goToNext();
-        } else if (diff < -swipeThreshold) {
-            // Swipe right - go prev
-            goToPrev();
-        }
+        track.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].clientX;
+            stopAutoScroll();
+        }, { passive: true });
+        
+        track.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].clientX;
+            
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (diff > swipeThreshold) {
+                // Swipe left - go next
+                goToNext();
+            } else if (diff < -swipeThreshold) {
+                // Swipe right - go prev
+                goToPrev();
+            }
+            
+            restartAutoScroll();
+        }, { passive: true });
     }
+    
+    // Setup event listeners
+    function setupEventListeners() {
+        prevBtn.addEventListener('click', goToPrev);
+        nextBtn.addEventListener('click', goToNext);
+        window.addEventListener('resize', handleResize);
+        setupTouchSupport();
+    }
+    
+    // Initialize everything
+    setupEventListeners();
+    
+    // Wait for images to load before initializing the carousel
+    // This ensures we get accurate card dimensions
+    window.addEventListener('load', function() {
+        // Initialize after a small delay to ensure layout is complete
+        setTimeout(initCarousel, 100);
+    });
+    
+    // Also initialize immediately in case images are already loaded
+    initCarousel();
 });

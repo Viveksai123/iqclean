@@ -24181,7 +24181,6 @@ body {
     font-size: 3rem !important;
   }
 }
-
 .cta-mobile-bar {
   position: fixed;
   bottom: 0;
@@ -24233,9 +24232,6 @@ body {
   color: #fff;
 }
 
-
-
-
 .cta-phone-number {
   color: white;
   text-decoration: none;
@@ -24249,10 +24245,20 @@ body {
   margin-right: 6px; /* Smaller margin */
 }
 
+/* Add padding to the bottom of the page to prevent footer content from being hidden */
+.footer-wrapper  {
+  padding-bottom: 50px; /* Same as CTA bar height */
+}
+
 /* Hide on desktop */
 @media (min-width: 768px) {
   .cta-mobile-bar {
-      display: none;
+    display: none;
+  }
+  
+  /* Remove the bottom padding on desktop */
+  .footer-wrapper  {
+    padding-bottom: 0;
   }
 }
 
@@ -24919,4 +24925,429 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
+}
+
+/* Enhanced Responsive Styles for Service Carousel */
+
+/* Fix container width and overflow */
+.iqhc5_services_container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Improve carousel wrapper */
+.iqhc5_carousel_wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding: 2% 0;
+  width: 100%;
+}
+
+/* Adjust carousel track */
+.iqhc5_carousel_track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* Make cards properly responsive */
+.iqhc5_service_card {
+  flex: 0 0 calc(25% - 15px);
+  min-width: calc(25% - 15px);
+  max-width: calc(25% - 15px);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .iqhc5_service_card {
+      flex: 0 0 calc(33.33% - 14px);
+      min-width: calc(33.33% - 14px);
+      max-width: calc(33.33% - 14px);
+  }
+}
+
+/* Medium screens */
+@media (max-width: 992px) {
+  .iqhc5_service_card {
+      flex: 0 0 calc(50% - 10px);
+      min-width: calc(50% - 10px);
+      max-width: calc(50% - 10px);
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 576px) {
+  .iqhc5_service_card {
+      flex: 0 0 calc(100% - 5px);
+      min-width: calc(100% - 5px);
+      max-width: calc(100% - 5px);
+  }
+  
+  .iqhc5_carousel_track {
+      gap: 15px;
+  }
+  
+  .iqhc5_services_container {
+      padding: 0 15px;
+  }
+}
+
+/* Fix image aspect ratio */
+.iqhc5_service_image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.iqhc5_service_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Controls adjustments */
+.iqhc5_carousel_controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+  width: 100%;
+}
+
+.iqhc5_progress_container {
+  width: 100%;
+  max-width: 100%;
+  height: 4px;
+  background-color: #e5e5e5;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.iqhc5_carousel_nav {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Make CTA button responsive */
+.iqhc5_cta_button {
+  padding: 12px 24px;
+  background-color: #FF6F3C;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .iqhc5_cta_button {
+      width: 100%;
+      max-width: 100%;
+  }
+}
+
+.page-id-4498 .kkrf5-legal-header {
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.page-id-4498 .kkrf5-legal-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.page-id-4498 .kkrf5-legal-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.page-id-4498 .kkrf5-legal-nav {
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.page-id-4498 .kkrf5-legal-nav a {
+  display: block;
+  margin: 0.5rem 0;
+  color: #0071e3;
+  text-decoration: none;
+}
+
+.page-id-4498 .kkrf5-legal-section {
+  margin-bottom: 3rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.page-id-4498 .kkrf5-legal-section h2 {
+  color: #0071e3;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* Mobile CTA Bar with unique class names */
+.page-id-4498 .kkrf5-mobile-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  height: 50px; /* Decreased height */
+}
+
+.page-id-4498 .kkrf5-mobile-cta-contact {
+  width: 50%;
+  padding: 10px; /* Reduced padding */
+  background-color: #FF6F3C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-id-4498 .kkrf5-mobile-cta-full {
+  width: 100%;
+  padding: 10px; /* Reduced padding */
+  background-color: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-id-4498 .kkrf5-mobile-cta-phone {
+  width: 50%;
+  padding: 10px; /* Reduced padding */
+  background-color: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-id-4498 .kkrf5-mobile-cta-label {
+  font-size: 14px; /* Smaller font */
+  font-weight: 500;
+  color: #fff;
+}
+
+.page-id-4498 .kkrf5-mobile-cta-label-large {
+  font-size: 20px; /* Smaller font */
+  font-weight: 500;
+  color: #fff;
+}
+
+.page-id-4498 .kkrf5-mobile-cta-phone-number {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px; /* Smaller font */
+  display: flex;
+  align-items: center;
+}
+
+.page-id-4498 .kkrf5-mobile-cta-phone-icon {
+  margin-right: 6px; /* Smaller margin */
+}
+
+.page-id-4498 .kkrf5-page-bottom {
+  margin-bottom: 50px; /* Add margin to bottom area to prevent overlap */
+}
+
+/* Base page styling */
+.page-id-4498 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  padding-bottom: 50px; /* Match the height of your CTA bar */
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+  .page-id-4498 .kkrf5-mobile-cta-bar {
+    display: none;
+  }
+  
+  /* Reset padding when CTA is hidden */
+  .page-id-4498 {
+    padding-bottom: 0;
+  }
+  
+  .page-id-4498 .kkrf5-page-bottom {
+    margin-bottom: 0;
+  }
+}
+
+.kkrf5-page-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  padding-bottom: 50px; /* Match the height of your CTA bar */
+}
+
+.kkrf5-legal-header {
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.kkrf5-legal-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.kkrf5-legal-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.kkrf5-legal-nav {
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.kkrf5-legal-nav a {
+  display: block;
+  margin: 0.5rem 0;
+  color: #0071e3;
+  text-decoration: none;
+}
+
+.kkrf5-legal-section {
+  margin-bottom: 3rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.kkrf5-legal-section h2 {
+  color: #0071e3;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* Mobile CTA Bar - with unique class names */
+.kkrf5-mobile-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  height: 50px; /* Decreased height */
+}
+
+.kkrf5-mobile-cta-contact {
+  width: 50%;
+  padding: 10px; /* Reduced padding */
+  background-color: #FF6F3C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kkrf5-mobile-cta-full {
+  width: 100%;
+  padding: 10px; /* Reduced padding */
+  background-color: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kkrf5-mobile-cta-phone {
+  width: 50%;
+  padding: 10px; /* Reduced padding */
+  background-color: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kkrf5-mobile-cta-label {
+  font-size: 14px; /* Smaller font */
+  font-weight: 500;
+  color: #fff;
+}
+
+.kkrf5-mobile-cta-label-large {
+  font-size: 20px; /* Smaller font */
+  font-weight: 500;
+  color: #fff;
+}
+
+.kkrf5-mobile-cta-phone-number {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px; /* Smaller font */
+  display: flex;
+  align-items: center;
+}
+
+.kkrf5-mobile-cta-phone-icon {
+  margin-right: 6px; /* Smaller margin */
+}
+
+.kkrf5-page-bottom {
+  margin-bottom: 50px; /* Add margin to bottom area to prevent overlap */
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+  .kkrf5-mobile-cta-bar {
+    display: none;
+  }
+  
+  /* Reset padding when CTA is hidden */
+  .kkrf5-page-wrapper {
+    padding-bottom: 0;
+  }
+  
+  .kkrf5-page-bottom {
+    margin-bottom: 0;
+  }
 }
